@@ -1,0 +1,11 @@
+[
+  {
+    "name": "VLDB Soltuions",
+    "title": "Software Developer",
+    "description":
+    "At this position I was fortunate to have built an SQL Transpiler using Java, Bash and a variety of SQL dialects following SOLID design principles. I also worked in teams to deliver products to clients such as the improvement of a REST API service in Python which prices a variety of products based on usage, the support and changes of a .NET risk management application and designed an on-premise to AWS cloud architecture diagram with instances of redshift, greenplum and snowflake to assist a cloud migration process for a client. I have also been present in a multitude of client consultations, stand-up meetings and weekly sprints.",
+    "image": "/vldbsolutions.png",
+    "tech": ["Java", "Python", "Rest", "SQL", "AWS", "Azure", ".NET"],
+    "link": "https://vldbsolutions.com/"
+  }
+]

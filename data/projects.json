@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Movie Manager",
+    "tech": ".NET Core, Azure, SQLite",
+    "description":
+    "Movie Manager is a web app that allows you to add, delete, update movies to a cloud database.",
+    "image": "/underconstruction.png",
+    "github": "https://github.com/CalGrimes/MoviesAppMVC",
+    "link": "https://movieappmvc20230621183851.azurewebsites.net/"
+  },
+  {
+    "name": "Under Construction",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut mollis nisl. Donec tincidunt purus pellentesque bibendum",
+    "image": "/underconstruction.png",
+    "github": "",
+    "link": ""
+  },
+  {
+    "name": "Under Construction",
+    "description":
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut mollis nisl. Donec tincidunt purus pellentesque bibendum.",
+    "image": "/underconstruction.png",
+    "github": "",
+    "link": ""
+  }
+]
