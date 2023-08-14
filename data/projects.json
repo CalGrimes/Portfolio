@@ -1,25 +1,26 @@
 [
   {
-    "name": "Movie Manager",
-    "tech": ".NET Core, Azure, SQLite",
-    "description":
-    "Movie Manager is a web app that allows you to add, delete, update movies to a cloud database.",
-    "image": "/underconstruction.png",
-    "github": "https://github.com/CalGrimes/MoviesAppMVC",
-    "link": "https://movieappmvc20230621183851.azurewebsites.net/"
-  },
-  {
-    "name": "Under Construction",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut mollis nisl. Donec tincidunt purus pellentesque bibendum",
-    "image": "/underconstruction.png",
+    "name": "Ecommerce Hot Sauce",
+    "tech": ["Vue", "Nuxt", "Firebase"],
+    "description": "Ecommerce store built with Vue, Nuxt, Firebase, Contentful CMS, Stripe.",
+    "image": "/ecommerce-hotsauce.png",
     "github": "",
     "link": ""
   },
   {
-    "name": "Under Construction",
+    "name": "Movie Manager",
+    "tech": [".NET Core", "Azure", "SQLite"],
     "description":
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut mollis nisl. Donec tincidunt purus pellentesque bibendum.",
-    "image": "/underconstruction.png",
+    "Movie Manager is a web app that allows you to add, delete, update movies to a cloud database.",
+    "image": "/moviemanager.png",
+    "github": "https://github.com/CalGrimes/MoviesAppMVC",
+    "link": "https://movieappmvc20230621183851.azurewebsites.net/"
+  },
+  {
+    "name": "Old Portfolio",
+    "description":
+    "My old portfolio site built with HTML, CSS, and JavaScript.",
+    "image": "/old-portfolio.png",
     "github": "",
     "link": ""
   }

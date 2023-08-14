@@ -60,7 +60,7 @@ return (
           </p>
           <Link
               to="projects"
-              className={`font-semibold px-6 py-3 rounded shadow
+              className={`font-semibold px-6 py-3 rounded shadow cursor-pointer
               ${currentTheme === "dark" ? "bg-amber-400 hover:bg-amber-300 text-black" : "bg-purple-800 hover:bg-purple-800 text-white"}`}
               activeClass="active"
               spy={true}
