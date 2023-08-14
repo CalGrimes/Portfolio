@@ -9,7 +9,7 @@
   },
   {
     "name": "Movie Manager",
-    "tech": [".NET Core", "Azure", "SQLite"],
+    "tech": [".NET", "Azure", "SQLite"],
     "description":
     "Movie Manager is a web app that allows you to add, delete, update movies to a cloud database.",
     "image": "/moviemanager.png",
@@ -17,11 +17,11 @@
     "link": "https://movieappmvc20230621183851.azurewebsites.net/"
   },
   {
-    "name": "Old Portfolio",
+    "name": "Blog Site",
     "description":
-    "My old portfolio site built with HTML, CSS, and JavaScript.",
-    "image": "/old-portfolio.png",
-    "github": "",
-    "link": ""
+    "My blog site built with Gatsby in which I gained my JAMStack Certification.",
+    "image": "/blogsite.png",
+    "github": "https://github.com/CalGrimes/CalGrimes-Blog-Postings",
+    "link": "https://pedantic-mcnulty-635da5.netlify.app/"
   }
 ]
