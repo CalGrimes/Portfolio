@@ -72,13 +72,15 @@ const AboutSection = () => {
                 )
               })}
             </div>
+            <a href="https://learn.microsoft.com/en-gb/users/CalGrimes-9071/credentials/9D6BF48AC368A1E0">
             <Image
               src="/certification.png"
-              alt=""
+              alt=""            
               width={150}
               height={150}
               className="md:relative md:mx-auto md:top-5 sm:relative sm:mx-auto sm:top-5 sm:left-50%"
             />
+            </a>
           </div>
         </div>
       </div>
