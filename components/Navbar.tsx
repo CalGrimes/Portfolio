@@ -48,8 +48,6 @@ export default function Navbar() {
                       className="h-10 w-50"
                       src="/logo-dark.png"
                       alt="logo"
-                      width={40}
-                      height={40}
                     />
 
                 ) : (

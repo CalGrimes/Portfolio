@@ -4,8 +4,8 @@
     "tech": ["Vue", "Nuxt", "Firebase"],
     "description": "Ecommerce store built with Vue, Nuxt, Firebase, Contentful CMS, Stripe.",
     "image": "/ecommerce-hotsauce.png",
-    "github": "",
-    "link": ""
+    "github": "https://github.com/CalGrimes/ECommerce-HotSauce",
+    "link": "https://hotsauce-ecommerce.netlify.app/"
   },
   {
     "name": "Movie Manager",
