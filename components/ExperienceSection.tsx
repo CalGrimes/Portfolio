@@ -6,6 +6,8 @@ import SlideUp from "./SlideUp"
 import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
 import {useTheme} from "next-themes";
 import experience from "../data/experience.json";
+// import another component
+import AccordionList from "./AccordionList"
 
 const ExperienceSection = () => {
   const { systemTheme, theme } = useTheme()
@@ -39,9 +41,10 @@ const ExperienceSection = () => {
                   </div>
                   <div className="mt-8 md:w-1/2">
                     <h1 className="text-4xl font-bold mb-6">{experience.name}</h1>
-                    <p className="text-xl leading-7 md:mb-16 sm:mb-4 text-neutral-600 dark:text-neutral-400 experience md:pr-2">
+                    <AccordionList items={experience.description} />
+                    {/* <p className="text-xl leading-7 md:mb-16 sm:mb-4 text-neutral-600 dark:text-neutral-400 experience md:pr-2">
                       {experience.description}
-                    </p>
+                    </p> */}
                     <div className="flex flex-auto align-bottom flex-wrap">
                         {experience.tech.map(tech => (
                                 <div key={idx} className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold">

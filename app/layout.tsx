@@ -2,7 +2,7 @@
 import "../styles/globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
-import { ThemeProvider } from "next-themes"
+import { Providers } from "./providers"
 
 export default function RootLayout({
   children,
@@ -17,11 +17,11 @@ export default function RootLayout({
       */}
       <head />
       <body className="dark:bg-stone-900">
-        <ThemeProvider enableSystem={true} attribute="class">
+        <Providers>
           <Navbar />
           {children}
           <Footer />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   )
