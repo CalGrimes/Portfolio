@@ -20,16 +20,13 @@ const skills = [
   "Azure",
 ];
 const AboutSection = () => {
-  const { systemTheme, theme } = useTheme()
-  const currentTheme = theme === "system" ? systemTheme : theme
+
   return (
     <section id="about">
       <div className="my-12 pb-12 md:pt-16 md:pb-48">
         <h1 className="my-10 text-center font-bold text-4xl">
           About Me
-          <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded ${
-              currentTheme === "dark" ? "bg-amber-400" : "bg-purple-800"
-          }`} />
+          <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded bg-purple-800 dark:bg-amber-400`} />
         </h1>
 
         <div className="flex flex-col space-y-10 items-stretch justify-center align-top md:space-x-10 md:space-y-0 md:p-4 md:flex-row md:text-left">
@@ -78,7 +75,7 @@ const AboutSection = () => {
               alt=""            
               width={150}
               height={150}
-              className="md:relative md:mx-auto md:top-5 sm:relative sm:mx-auto sm:top-5 sm:left-50%"
+              className="md:relative md:mx-auto md:top-5 sm:relative sm:mx-auto sm:top-5 sm:left-50% mx-auto"
             />
             </a>
           </div>

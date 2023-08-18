@@ -9,16 +9,12 @@ import projects from "../data/projects.json";
 
 
 const ProjectsSection = () => {
-  const { systemTheme, theme } = useTheme()
-  const currentTheme = theme === "system" ? systemTheme : theme
   return (
     <section id="projects">
     <div className="my-12 pb-12 md:pt-16 md:pb-48">
       <h1 className="my-10 text-center font-bold text-4xl ">
         Projects
-        <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded ${
-            currentTheme === "dark" ? "bg-amber-400" : "bg-purple-800"
-        }`} />
+        <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded dark:bg-amber-400 bg-purple-800`} />
       </h1>
 
       <div className="flex flex-col space-y-28">

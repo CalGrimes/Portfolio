@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
 import { RiMoonFill, RiSunLine } from "react-icons/ri"
 import { IoMdMenu, IoMdClose } from "react-icons/io"
+import Image from 'next/image'
 
 interface NavItem {
   label: string
@@ -43,19 +44,22 @@ export default function Navbar() {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="home">
               <div className="container flex items-center space-x-2 cursor-pointer hover:contrast-200">
-                {currentTheme === "dark" ? (
-                    <img
-                      className="h-10 w-50"
-                      src="/logo-dark.png"
-                      alt="logo"
-                    />
-
+              {currentTheme === "dark" ? (
+                <Image
+                  className="h-max w-max"
+                  src="/logo-dark.png"
+                  height={120}
+                  width={120}
+                  alt="logo"
+                />
                 ) : (
-                    <img
-                        className="h-10 w-50"
-                        src="/logo-light.png"
-                        alt="logo"
-                    />
+                <Image
+                  className="h-max w-max"
+                  src="/logo-light.png"
+                  height={120}
+                  width={120}
+                  alt="logo"
+                />
                 )}
               </div>
             </Link>

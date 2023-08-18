@@ -6,20 +6,15 @@ import SlideUp from "./SlideUp"
 import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
 import {useTheme} from "next-themes";
 import experience from "../data/experience.json";
-// import another component
-import AccordionList from "./AccordionList"
+import { AccordionList } from "./AccordionList"
 
 const ExperienceSection = () => {
-  const { systemTheme, theme } = useTheme()
-  const currentTheme = theme === "system" ? systemTheme : theme
   return (
     <section id="experience">
         <div className="my-12 pb-12 md:pt-16 md:pb-48">
             <h1 className="my-10 text-center font-bold text-4xl">
                 Experience
-                <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded ${
-                    currentTheme === "dark" ? "bg-amber-400" : "bg-purple-800"
-                }`} />
+                <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded dark:bg-amber-400 bg-purple-800`} />
             </h1>
 
       <div className="flex flex-col space-y-28">

@@ -3,7 +3,22 @@
     "name": "VLDB Soltuions",
     "title": "Software Developer",
     "description":
-    [["Java SQL Transpiler", "blah blah blah"], ["RestAPI Billing Usage", "blah blah blah"]],
+    [
+      {
+        "title": "SQL Transpiler (CLI)",
+        "content": 
+        "Manipulates tens of thousands of SQL queries in a single instance using Java. SQL Dialects are converted in multiple stages and tested using JDBC"
+      },
+      {
+        "title": "Billing Usages Application (RestAPI)",
+        "content": 
+        "Processed heavily nested json data using Pandas to find out when a consumer has reached their usage limit from several factors. The data was then updated using a REST API, sent to a database and alerts were sent to the consumer."
+      },
+      {
+        "title": "Risk Management System (Full Stack)",
+        "content": "Maintanance, bug fixes and new features for a risk management system for ports around the UK using .NET and SQL Server."
+      }
+    ],
     "image": "/vldbsolutions.png",
     "tech": ["Java", "Python", "Rest", "SQL", "AWS", "Azure", ".NET"],
     "link": "https://vldbsolutions.com/"

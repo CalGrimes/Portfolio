@@ -30,9 +30,7 @@ const HeroSection = () => {
     };
   }, []);
 
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
-  const isSmallScreen = useMediaQuery({ maxWidth: 767 });
+  const isSmallScreen = useMediaQuery({ maxWidth: 768 });
 
 return (
     <section id="home">
@@ -53,15 +51,14 @@ return (
           <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-7xl">Hi, I&#39;m Cal!</h1>
           <p className="text-lg mt-4 mb-6 md:text-2xl">
             I&#39;m a{" "}
-            <span className={`"font-semibold ${currentTheme === "dark" ? "text-amber-400" : "text-purple-800"}`}>
+            <span className={`"font-semibold dark:text-amber-400 text-purple-800`}>
                 Software Engineer{" "}
             </span>
             working on personalized solutions for the modern world.
           </p>
           <Link
               to="projects"
-              className={`font-semibold px-6 py-3 rounded shadow cursor-pointer
-              ${currentTheme === "dark" ? "bg-amber-400 hover:bg-amber-300 text-black" : "bg-purple-800 hover:bg-purple-800 text-white"}`}
+              className={`font-semibold px-6 py-3 rounded shadow cursor-pointer dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white`}
               activeClass="active"
               spy={true}
               smooth={true}

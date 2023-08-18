@@ -18,9 +18,6 @@ const Contact = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
-    const { systemTheme, theme } = useTheme()
-    const currentTheme = theme === "system" ? systemTheme : theme
-
     const handleSubmit = async (
         values: FormValues,
         {
@@ -67,9 +64,7 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className={`flex flex-col py-0 text-center mt-16 shadow-xl ${
-                currentTheme === "dark" ? "bg-neutral-700" : "bg-gray-200"
-            }`}
+            className={`flex flex-col py-0 text-center mt-16 shadow-xl bg-gray-200 dark:bg-neutral-700`}
         >
             <ToastContainer
                 position="top-center"
@@ -85,14 +80,10 @@ const Contact = () => {
             <div className="my-12 md:pb-16">
                 <h1 className="my-10 text-center font-bold text-4xl mb-20">
                     Contact
-                    <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded ${
-                        currentTheme === "dark" ? "bg-amber-400" : "bg-purple-800"
-                    }`} />
+                    <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded bg-purple-800 dark:bg-amber-400 `} />
                 </h1>
 
-                <p className={`mb-6 text-xl ${
-                    currentTheme === "dark" ? "text-gray-500" : "text-gray-600"
-                }`}>
+                <p className={`mb-6 text-xl dark:text-gray-500 text-gray-600`}>
                     Want to get in touch? Send me a message!
                 </p>
 
@@ -114,8 +105,7 @@ const Contact = () => {
                                                 id="name"
                                                 name="name"
                                                 placeholder="Name*"
-                                                className={`w-full rounded p-2 text-lg focus:outline-none focus:ring-2 
-                                                ${currentTheme === "dark" ? "focus:ring-amber-400" : "focus:ring-purple-500"}`}
+                                                className={`w-full rounded p-2 text-lg focus:outline-none focus:ring-2 dark:focus:ring-amber-40 focus:ring-purple-500`}
                                             />
                                             {/* <ErrorMessage
                         name="name"
@@ -130,8 +120,7 @@ const Contact = () => {
                                                 id="email"
                                                 name="email"
                                                 placeholder="Email*"
-                                                className={`w-full rounded p-2 text-lg focus:outline-none focus:ring-2 
-                                                ${currentTheme === "dark" ? "focus:ring-amber-400" : "focus:ring-purple-500"}`}
+                                                className={`w-full rounded p-2 text-lg focus:outline-none focus:ring-2 dark:focus:ring-amber-400 focus:ring-purple-500`}
                                             />
                                             {/* <ErrorMessage
                         name="email"
@@ -147,8 +136,7 @@ const Contact = () => {
                                             id="message"
                                             name="message"
                                             placeholder="Your message here*"
-                                            className={`h-48 w-full rounded p-2 text-lg focus:outline-none focus:ring-2 
-                                            ${currentTheme === "dark" ? "focus:ring-amber-400" : "focus:ring-purple-500"}`}
+                                            className={`h-48 w-full rounded p-2 text-lg focus:outline-none focus:ring-2 dark:focus:ring-amber-400 focus:ring-purple-500`}
                                         />
                                         {/* <ErrorMessage
                       name="message"
@@ -161,8 +149,7 @@ const Contact = () => {
                                         <button
                                             type="submit"
                                             disabled={isLoading}
-                                            className={`font-semibold px-6 py-3 rounded shadow 
-                                            ${currentTheme === "dark" ? "bg-amber-400 hover:bg-amber-300 text-black" : "bg-purple-800 hover:bg-purple-800 text-white"}`}
+                                            className={`font-semibold px-6 py-3 rounded shadow  dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white`}
                                         >
                                             <p className="text-lg font-semibold">
                                                 {isLoading ? "Submitting..." : "Submit"}
