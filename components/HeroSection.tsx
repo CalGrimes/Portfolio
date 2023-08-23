@@ -41,7 +41,7 @@ return (
               alt=""
               width={325}
               height={isSmallScreen ?  100: 325}
-              className="rounded-full shadow-2xl headshot"
+              className="rounded-full shadow-2xl headshot z-10"
               style={{
                 transform: `perspective(1000px) rotateX(${tiltValues.tiltY}deg) rotateY(${tiltValues.tiltX}deg)`,
               }}
