@@ -23,19 +23,19 @@ import {
 
 export const AccordionList = ({ items }: AccordionListProps) => {
     return (
-        <Accordion allowToggle className={`rounded-xl border p-3 shadow-xl hover:opacity-7 border-black dark:border-white`}>
+         <Accordion allowToggle className={`rounded-xl border p-3 shadow-xl hover:opacity-7 border-black dark:border-white`}>
             {items.map((item, index) => (
                 <AccordionItem key={index}>
                     <h2>
                         <AccordionButton className='dark:hover:brightness-50 hover:opacity-70'>
-                            <Box as="span" flex='1' textAlign='left' fontWeight='bold'>
-                                {item.title}
+                            <Box as="span" flex='1' textAlign='left' fontWeight='bold' className='p-2'>
+                                <p className='rounded border border-xl border-black dark:bg-amber-400 bg-purple-800 text-white dark:text-black px-2 inline-block'>{item.title}</p>
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>
                     </h2>
-                    <hr className={`rounded border my-2 border-gray-400 dark:border-stone-500`} />
-                    <AccordionPanel pb={4}>
+                    {/* <hr className={`rounded border my-2 border-black dark:border-white`} /> */}
+                    <AccordionPanel pb={4} className='ml-4 px-2 rounded bg-gray-200 dark:bg-zinc-800'>
                         {item.content}
                     </AccordionPanel>
                 </AccordionItem>

@@ -6,6 +6,7 @@ import SlideUp from "./SlideUp"
 import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
 import {useTheme} from "next-themes";
 import projects from "../data/projects.json";
+import { Tooltip } from '@chakra-ui/react'
 
 
 const ProjectsSection = () => {
@@ -45,7 +46,7 @@ const ProjectsSection = () => {
                         return (
                           <p
                             key={idx}
-                            className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold"
+                            className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 dark:bg-zinc-800 dark:text-gray-200 rounded font-semibold"
                           >
                             {tech}
                           </p>
@@ -53,18 +54,22 @@ const ProjectsSection = () => {
                       })}
                     </div>
                     <div className="flex flex-row align-bottom space-x-4">
+                      <Tooltip label="Source Code" aria-label='Source Code Tooltip' placement="top" className="p-1 rounded bg-gray-200 dark:bg-zinc-800">
                       <Link href={project.github} target="_blank">
                         <BsGithub
                           size={30}
                           className="hover:-translate-y-1 transition-transform cursor-pointer"
                         />
                       </Link>
+                      </Tooltip>
+                      <Tooltip label="Demo" aria-label='Demo Tooltip' placement="top" className="p-1 rounded bg-gray-200 dark:bg-zinc-800">
                       <Link href={project.link} target="_blank">
                         <BsArrowUpRightSquare
                           size={30}
                           className="hover:-translate-y-1 transition-transform cursor-pointer"
                         />
                       </Link>
+                      </Tooltip>
                     </div>
                   </div>
                 </div>

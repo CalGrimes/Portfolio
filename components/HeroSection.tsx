@@ -48,8 +48,8 @@ return (
           />
         </div>
         <div className="md:mt-2 md:w-3/5">
-          <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-7xl">Hi, I&#39;m Cal!</h1>
-          <p className="text-lg mt-4 mb-6 md:text-2xl">
+          <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-7xl cursor-default">Hi, I&#39;m Cal!</h1>
+          <p className="text-lg mt-4 mb-6 md:text-2xl cursor-default">
             I&#39;m a{" "}
             <span className={`"font-semibold dark:text-amber-400 text-purple-800`}>
                 Software Engineer{" "}
@@ -58,7 +58,7 @@ return (
           </p>
           <Link
               to="projects"
-              className={`font-semibold px-6 py-3 rounded shadow cursor-pointer dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white`}
+              className={`font-semibold px-6 py-3 rounded shadow cursor-pointer dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white dark:hover:brightness-50 hover:opacity-70`}
               activeClass="active"
               spy={true}
               smooth={true}

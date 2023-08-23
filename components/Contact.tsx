@@ -149,7 +149,7 @@ const Contact = () => {
                                         <button
                                             type="submit"
                                             disabled={isLoading}
-                                            className={`font-semibold px-6 py-3 rounded shadow  dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white`}
+                                            className={`font-semibold px-6 py-3 rounded shadow  dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white dark:hover:brightness-50 hover:opacity-70`}
                                         >
                                             <p className="text-lg font-semibold">
                                                 {isLoading ? "Submitting..." : "Submit"}

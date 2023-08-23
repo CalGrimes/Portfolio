@@ -37,12 +37,9 @@ const ExperienceSection = () => {
                   <div className="mt-8 md:w-1/2">
                     <h1 className="text-4xl font-bold mb-6">{experience.name}</h1>
                     <AccordionList items={experience.description} />
-                    {/* <p className="text-xl leading-7 md:mb-16 sm:mb-4 text-neutral-600 dark:text-neutral-400 experience md:pr-2">
-                      {experience.description}
-                    </p> */}
-                    <div className="flex flex-auto align-bottom flex-wrap">
+                    <div className="flex flex-auto align-bottom flex-wrap mt-4">
                         {experience.tech.map(tech => (
-                                <div key={idx} className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold">
+                                <div key={idx} className="bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 mt-2 text-gray-500 dark:text-gray-200 rounded font-semibold">
                                     {tech}
                                 </div>
                         ))}
