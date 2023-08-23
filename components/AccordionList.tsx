@@ -11,7 +11,17 @@ import {
   import { Box } from '@chakra-ui/react'
   import { Divider } from '@chakra-ui/react'
 
-export const AccordionList = ({ items }) => {
+  type Item = {
+    title: string;
+    content: string;
+  }
+  
+  type AccordionListProps = {
+    items: Item[];
+  }
+  
+
+export const AccordionList = ({ items }: AccordionListProps) => {
     return (
         <Accordion allowToggle className={`rounded-xl border p-3 shadow-xl hover:opacity-7 border-black dark:border-white`}>
             {items.map((item, index) => (
