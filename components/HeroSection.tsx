@@ -7,7 +7,7 @@ import { useTheme } from "next-themes"
 import { useState, useEffect } from "react";
 import { useMediaQuery } from 'react-responsive';
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   const [tiltValues, setTiltValues] = useState({ tiltX: 0, tiltY: 0 });
 
   useEffect(() => {
