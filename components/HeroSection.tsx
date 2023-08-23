@@ -40,7 +40,7 @@ return (
               src={isSmallScreen ? "/headshot-sm.png" : "/headshot.png"}
               alt=""
               width={325}
-              height={325}
+              height={isSmallScreen ?  100: 325}
               className="rounded-full shadow-2xl headshot"
               style={{
                 transform: `perspective(1000px) rotateX(${tiltValues.tiltY}deg) rotateY(${tiltValues.tiltX}deg)`,
