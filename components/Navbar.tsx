@@ -31,8 +31,7 @@ const NAV_ITEMS: Array<NavItem> = [
     page: "contact",
   },
 ]
-
-export default function Navbar() {
+const Navbar: React.FC = () => {
   const { systemTheme, theme, setTheme } = useTheme()
   const currentTheme = theme === "system" ? systemTheme : theme
   const pathname = usePathname()
@@ -68,7 +67,7 @@ export default function Navbar() {
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
                 onClick={() => setNavbar(!navbar)}
               >
-                {navbar ? <IoMdClose size={30} /> : <IoMdMenu size={30} />}
+                {navbar ? <IoMdClose size={30}/> : <IoMdMenu size={30} />}
               </button>
             </div>
           </div>
@@ -123,3 +122,5 @@ export default function Navbar() {
     </header>
   )
 }
+
+export default Navbar;
