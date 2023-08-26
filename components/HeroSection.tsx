@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
     };
   }, []);
 
-  const isSmallScreen = useMediaQuery({ maxWidth: 768 });
+  const isSmallScreen = useMediaQuery({ maxWidth: 600 });
 
 return (
     <section id="home">
