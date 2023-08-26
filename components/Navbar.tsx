@@ -1,6 +1,6 @@
 "use client" // this is a client component
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll/modules"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
@@ -32,10 +32,11 @@ const NAV_ITEMS: Array<NavItem> = [
   },
 ]
 const Navbar: React.FC = () => {
-  const { systemTheme, theme, setTheme } = useTheme()
-  const currentTheme = theme === "system" ? systemTheme : theme
+  const { systemTheme, theme, setTheme } = useTheme();
+  const [currentTheme, setCurrentTheme] = useState(theme === "system" ? systemTheme : theme);
   const pathname = usePathname()
   const [navbar, setNavbar] = useState(false)
+
   return (
     <header className="w-full mx-auto  px-4 sm:px-20 fixed top-0 z-50 shadow bg-white dark:bg-stone-900 dark:border-b dark:border-stone-600">
       <div className="justify-between md:items-center md:flex">
@@ -43,23 +44,20 @@ const Navbar: React.FC = () => {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="home">
               <div className="container flex items-center space-x-2 cursor-pointer hover:contrast-200">
-              {currentTheme === "dark" ? (
-                <Image
-                  className="h-max w-max"
+              <Image
+                  className="h-max w-max hidden dark:block"
                   src="/logo-dark.png"
                   height={120}
                   width={120}
                   alt="logo"
                 />
-                ) : (
                 <Image
-                  className="h-max w-max"
+                  className="h-max w-max dark:hidden block"
                   src="/logo-light.png"
                   height={120}
                   width={120}
                   alt="logo"
                 />
-                )}
               </div>
             </Link>
             <div className="md:hidden">
@@ -100,21 +98,18 @@ const Navbar: React.FC = () => {
                   </Link>
                 )
               })}
-              {currentTheme === "dark" ? (
                 <button
                   onClick={() => setTheme("light")}
-                  className="bg-slate-100 p-2 rounded-xl"
+                  className="bg-slate-100 p-2 rounded-xl hidden dark:block"
                 >
                   <RiSunLine size={25} color="black"/>
                 </button>
-              ) : (
                 <button
                   onClick={() => setTheme("dark")}
-                  className="bg-slate-100 p-2 rounded-xl"
+                  className="bg-slate-100 p-2 rounded-xl block dark:hidden"
                 >
                   <RiMoonFill size={25} />
                 </button>
-              )}
             </div>
           </div>
         </div>
