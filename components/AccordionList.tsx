@@ -35,7 +35,7 @@ export const AccordionList = ({ items }: AccordionListProps) => {
                         </AccordionButton>
                     </h2>
                     {/* <hr className={`rounded border my-2 border-black dark:border-white`} /> */}
-                    <AccordionPanel pb={4} className='ml-4 px-2 rounded bg-gray-200 dark:bg-zinc-800 text-justify'>
+                    <AccordionPanel pb={4} className='ml-2 px-2 rounded bg-gray-200 dark:bg-zinc-800 text-justify'>
                         {item.content}
                     </AccordionPanel>
                 </AccordionItem>
