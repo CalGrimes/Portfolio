@@ -23,7 +23,7 @@ import {
 
 export const AccordionList = ({ items }: AccordionListProps) => {
     return (
-         <Accordion allowToggle className={`rounded-xl border p-3 shadow-xl hover:opacity-7 border-black dark:border-white`}>
+         <Accordion allowToggle className={`rounded-xl border p-3 shadow-xl hover:opacity-70 border-black dark:border-white`}>
             {items.map((item, index) => (
                 <AccordionItem key={index}>
                     <h2>
