@@ -1,12 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface PostCardProps {
-  id?: string;
-  date?: string;
-  title?: string;
-  tags?: string[];
-  thumbnail?: string;
+  id: string;
+  date: string;
+  title: string;
+  tags: string[];
+  thumbnail: string;
 }
 
 const PostCard: React.FC<PostCardProps> = ({ id, date, title, tags, thumbnail }) => {
@@ -25,10 +26,10 @@ const PostCard: React.FC<PostCardProps> = ({ id, date, title, tags, thumbnail })
     <div className="flex flex-col flex-grow p-4">
       <div className="flex flex-row justify-between">
         <div className="flex flex-col">
-          <h3 className="text-lg font-bold">{title}</h3>
+          <h3 className="text-3xl font-bold">{title}</h3>
         </div>
         <div className="flex flex-col">
-          <p className="text-xs ml-auto p-4">{date}</p>
+          <p className=" ml-auto p-4">{date}</p>
         </div>
       </div>
       <div className="flex flex-wrap mt-auto">
@@ -43,6 +44,12 @@ const PostCard: React.FC<PostCardProps> = ({ id, date, title, tags, thumbnail })
               {tag}
             </span>
           ))}
+      <Link
+              className={`font-semibold px-6 py-3 rounded shadow cursor-pointer dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white dark:hover:brightness-50 hover:opacity-70 ml-auto hover:transition-all duration-300 ease-in-out`}
+              href={`/posts/${id}`}
+          >
+            View Post
+          </Link>
       </div>
     </div>
   </div>

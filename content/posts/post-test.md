@@ -1,5 +1,5 @@
 ---
-id: '1'
+id: 'post-test'
 date: '15-09-2021'
 title: 'Post Test'
 tags: ['test', 'post', 'cloud']
