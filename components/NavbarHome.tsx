@@ -1,7 +1,8 @@
 "use client" // this is a client component
 import React from "react"
 import { useState, useEffect } from "react";
-import { Link } from "react-scroll/modules"
+import { Link as ScrollLink } from "react-scroll/modules"
+import  Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
 import { RiMoonFill, RiSunLine } from "react-icons/ri"
@@ -42,7 +43,7 @@ const Navbar: React.FC = () => {
       <div className="justify-between md:items-center md:flex">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link to="home">
+            <ScrollLink to="home">
               <div className="container flex items-center space-x-2 cursor-pointer hover:contrast-200">
               <Image
                   className="h-max w-max hidden dark:block"
@@ -59,7 +60,7 @@ const Navbar: React.FC = () => {
                   alt="logo"
                 />
               </div>
-            </Link>
+            </ScrollLink>
             <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -80,7 +81,7 @@ const Navbar: React.FC = () => {
             <div className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               {NAV_ITEMS.map((item, idx) => {
                 return (
-                  <Link
+                  <ScrollLink
                     key={idx}
                     to={item.page}
                     className={
@@ -95,9 +96,11 @@ const Navbar: React.FC = () => {
                     onClick={() => setNavbar(!navbar)}
                   >
                     {item.label}
-                  </Link>
+                  </ScrollLink>
+                  
                 )
               })}
+              <Link href="/blog">Blog</Link>
                 <button
                   onClick={() => setTheme("light")}
                   className="bg-slate-100 p-2 rounded-xl hidden dark:block"

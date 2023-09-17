@@ -69,15 +69,26 @@ const AboutSection = () => {
                 )
               })}
             </div>
+            <div className="flex flex-wrap">
             <a href="https://learn.microsoft.com/en-gb/users/CalGrimes-9071/credentials/9D6BF48AC368A1E0">
             <Image
-              src="/certification.png"
+              src="/azure-data-fundamentals.png"
               alt=""            
               width={150}
               height={150}
-              className="md:relative md:mx-auto md:top-5 sm:relative sm:mx-auto sm:top-5 sm:left-50% mx-auto"
+              className="md:relative  md:top-5 sm:relative  sm:top-5 sm:left-50% mx-auto"
             />
             </a>
+            <a href="https://learn.microsoft.com/en-gb/users/calgrimes-9071/credentials/a91d09376b31a0ab">
+            <Image
+            src="/azure-administrator.svg"
+            alt=""            
+              width={150}
+              height={150}
+              className="md:relative  md:top-5 sm:relative  sm:top-5 sm:left-50% mx-auto"
+            />
+            </a>
+            </div>
           </div>
         </div>
       </div>
