@@ -39,6 +39,7 @@
     "react": "^18.2.0",
     "react-calendly": "^4.1.1",
     "react-dom": "18.2.0",
+    "react-fetching-library": "^1.7.6",
     "react-icons": "^4.11.0",
     "react-responsive": "^9.0.2",
     "react-scroll": "^1.8.9",
@@ -49,6 +50,7 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.2",
     "@types/nodemailer-smtp-transport": "^2.7.5",
     "@types/react-scroll": "^1.8.6",
     "autoprefixer": "^10.4.14",

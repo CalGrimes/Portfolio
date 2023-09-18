@@ -6,6 +6,7 @@ import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
 
+
 export function getSortedPostsData() {
     // Get file names under /posts
     const fileNames = fs.readdirSync(postsDirectory);
@@ -64,4 +65,8 @@ export function getSortedPostsData() {
         };
 
         return blogPostWithHTML;
+    }
+    export function getPostsByTag(tag: string) {
+        const allPostsData = getSortedPostsData();
+        return allPostsData.filter((post) => post.tags.includes(tag));
     }
