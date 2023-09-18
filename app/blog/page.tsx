@@ -3,15 +3,15 @@ import { getSortedPostsData } from "@/lib/posts"
 
 
 // blog/page.tsx
-export async function getStaticProps() {
-  const posts = getSortedPostsData();
+// export async function getStaticProps() {
+//   const posts = getSortedPostsData();
 
-  return {
-    props: {
-      posts
-    },
-  };
-}
+//   return {
+//     props: {
+//       posts
+//     },
+//   };
+// }
 
 export default function BlogPostings() {
   const posts = getSortedPostsData()
