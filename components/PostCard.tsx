@@ -23,29 +23,31 @@ const PostCard: React.FC<PostCardProps> = ({ id, date, title, tags, thumbnail })
         height={30}
       />
     </div>
-    <div className="flex flex-col flex-grow p-4">
-      <div className="flex flex-row justify-between">
+    <div className="flex flex-col flex-grow p-4 pb-0">
+      <div className="flex flex-row justify-between mb-4">
         <div className="flex flex-col">
           <h3 className="text-3xl font-bold">{title}</h3>
         </div>
         <div className="flex flex-col">
-          <p className=" ml-auto p-4">{date}</p>
+          <p className="ml-auto">{date}</p>
         </div>
       </div>
-      <div className="flex flex-wrap mt-auto">
+      <div className="flex flex-wrap mt-auto mb-2">
         {tags &&
           tags.map((tag, index) => (
+            <Link className="mt-2" href={`/blog?tag=${tag}`} key={index}>
             <span
               key={tag}
               className="
-              bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 mt-2 text-gray-500 dark:text-gray-200 rounded font-semibol
+              bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 text-gray-500 dark:text-gray-200 rounded 
                dark:hover:brightness-50 hover:opacity-70 cursor-pointer hover:transition-all duration-300 ease-in-out"
             >
               {tag}
             </span>
+            </Link>
           ))}
-      <Link
-              className={`font-semibold px-6 py-3 rounded shadow cursor-pointer dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white dark:hover:brightness-50 hover:opacity-70 ml-auto hover:transition-all duration-300 ease-in-out`}
+          <Link
+              className={`font-semibold px-6 py-2 rounded shadow cursor-pointer dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white dark:hover:brightness-50 hover:opacity-70 ml-auto hover:transition-all duration-300 ease-in-out`}
               href={`/posts/${id}`}
           >
             View Post

@@ -22,11 +22,13 @@ export default function Posts({ posts }: Props) {
   return (
     <>
     <section id="tag-filter">
-    <div className="flex flex-col animate-fadeIn animation-delay-2 sm:pb-10 md:pb-6 md:flex-row md:space-x-4 md:text-left">
-       <h2>Filter By:</h2>
+    <div className="flex flex-wrap mt-auto">
+       <h2 className="mr-4">Filter By:</h2>
        <a href={`/blog/`}>
             <span
-              className="bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 mt-2 text-gray-500 dark:text-gray-200 rounded font-semibold dark:hover:brightness-50 hover:opacity-70 cursor-pointer hover:transition-all duration-300 ease-in-out"
+              className="
+              bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 mt-2 text-gray-500 dark:text-gray-200 rounded 
+               dark:hover:brightness-50 hover:opacity-70 cursor-pointer hover:transition-all duration-300 ease-in-out"
             >
               All
             </span>
@@ -35,7 +37,9 @@ export default function Posts({ posts }: Props) {
             <a href={`/blog?tag=${tag}`} key={index}>
             <span
               key={index}
-              className="bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 mt-2 text-gray-500 dark:text-gray-200 rounded font-semibold dark:hover:brightness-50 hover:opacity-70 cursor-pointer hover:transition-all duration-300 ease-in-out"
+              className="
+              bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 mt-2 text-gray-500 dark:text-gray-200 rounded 
+               dark:hover:brightness-50 hover:opacity-70 cursor-pointer hover:transition-all duration-300 ease-in-out"
             >
               {tag}
             </span>
