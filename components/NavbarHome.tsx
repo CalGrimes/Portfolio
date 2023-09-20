@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
                   
                 )
               })}
-              <Link href="/blog">Blog</Link>
+              <Link className="block lg:inline-block text-neutral-900  hover:contrast-50 cursor-pointer dark:text-neutral-100" href="/blog">Blog</Link>
                 <button
                   onClick={() => setTheme("light")}
                   className="bg-slate-100 p-2 rounded-xl hidden dark:block"
