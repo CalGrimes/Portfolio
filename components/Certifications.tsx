@@ -27,7 +27,7 @@ const Certifications = () => {
                 <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
                     Certifications
                 </h1>
-            <div className="flex flex-row">
+            <div className="flex flex-row sm:justify-center">
               {certifications.map((certification, idx) => {
                 return (
                 <a href={certification.link} key={idx}>
