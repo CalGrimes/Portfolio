@@ -6,33 +6,24 @@ interface PostCardProps {
   id: string;
   date: string;
   title: string;
+  description: string;
   tags: string[];
   thumbnail: string;
 }
 
-const PostCard: React.FC<PostCardProps> = ({ id, date, title, tags, thumbnail }) => {
+const PostCard: React.FC<PostCardProps> = ({ id, date, title, description, tags, thumbnail }) => {
   return (
-    <div className="rounded-lg shadow-lg w-full flex flex-col justify-between overflow-hidden mx-auto my-6">
-  <div className="flex flex-row h-full">
-    <div className="flex-shrink-0">
-      <Image
-        src={`/${thumbnail}`}
-        alt={title ? title : ""}
-        aria-hidden="true"
-        width={100}
-        height={30}
-      />
-    </div>
-    <div className="flex flex-col flex-grow p-4 pb-0">
-      <div className="flex flex-row justify-between mb-4">
-        <div className="flex flex-col">
-          <h3 className="text-3xl font-bold">{title}</h3>
-        </div>
-        <div className="flex flex-col">
-          <p className="ml-auto">{date}</p>
-        </div>
-      </div>
-      <div className="flex flex-wrap mt-auto mb-2">
+    <a href={`/posts/${id}`} className="flex flex-col items-center rounded-lg shadow-lg md:flex-row  p-2 relative ">
+    <Image
+    width={100}
+    height={100}
+    className="object-cover w-full rounded-t-lg h-96 md:h-48 md:w-32 md:rounded-none md:rounded-l-lg "
+    src={`/${thumbnail}`} alt="" />
+        <div className="absolute rounded p-2 top-4 right-8 dark:bg-amber-400 dark:text-black text-white bg-purple-800">{date}</div>
+    <div className="flex flex-col justify-between p-4 leading-normal">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{description}</p>
+    <a className="flex flex-wrap mt-auto ">
         {tags &&
           tags.map((tag, index) => (
             <Link className="mt-2" href={`/blog?tag=${tag}`} key={index}>
@@ -46,16 +37,9 @@ const PostCard: React.FC<PostCardProps> = ({ id, date, title, tags, thumbnail })
             </span>
             </Link>
           ))}
-          <Link
-              className={`font-semibold px-6 py-2 rounded shadow cursor-pointer dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white dark:hover:brightness-50 hover:opacity-70 ml-auto hover:transition-all duration-300 ease-in-out`}
-              href={`/posts/${id}`}
-          >
-            View Post
-          </Link>
-      </div>
+          </a>
     </div>
-  </div>
-</div>
+</a>
   );
 };
 

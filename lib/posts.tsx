@@ -25,6 +25,7 @@ export function getSortedPostsData() {
             id,
             date: matterResult.data.date,
             title: matterResult.data.title,
+            description: matterResult.data.description,
             tags: matterResult.data.tags,
             thumbnail: matterResult.data.thumbnail,
         };
@@ -58,6 +59,7 @@ export function getSortedPostsData() {
         const blogPostWithHTML: BlogPost & { contentHtml: string } = {
             id,
             title: matterResult.data.title,
+            description: matterResult.data.description,
             date: matterResult.data.date,
             tags: matterResult.data.tags,
             thumbnail: matterResult.data.thumbnail,
