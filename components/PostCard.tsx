@@ -15,8 +15,8 @@ const PostCard: React.FC<PostCardProps> = ({ id, date, title, description, tags,
   return (
     <a href={`/posts/${id}`} className="flex flex-col items-center rounded-lg shadow-lg md:flex-row  p-2 relative ">
     <Image
-    width={100}
-    height={100}
+    width={300}
+    height={200}
     className="object-cover w-full rounded-t-lg h-96 md:h-48 md:w-32 md:rounded-none md:rounded-l-lg "
     src={`/${thumbnail}`} alt="" />
         <div className="absolute rounded p-2 top-4 right-8 dark:bg-amber-400 dark:text-black text-white bg-purple-800">{date}</div>
