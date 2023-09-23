@@ -3,9 +3,7 @@ import React from "react"
 import Image from "next/image"
 import { Link } from "react-scroll/modules"
 import { HiArrowDown } from "react-icons/hi"
-import { useTheme } from "next-themes"
 import { useState, useEffect } from "react";
-import { useMediaQuery } from 'react-responsive';
 import Certifications from "./Certifications"
 
 const HeroSection: React.FC = () => {
@@ -31,31 +29,16 @@ const HeroSection: React.FC = () => {
     };
   }, []);
 
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 768);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
 return (
     <section id="home">
       <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 pt-16 sm:pt-16 sm:pb-10 md:pt-16 md:pb-6 md:flex-row md:space-x-4 md:text-left">
-        <div className="md:mt-2 md:w-1/2">
+        <div className="md:mt-2">
           <Image
-              src={isSmallScreen ? "/headshot-sm.png" : "/headshot.png"}
+              src={"/headshot.png"}
               alt=""
               width={325}
-              height={isSmallScreen ?  100: 325}
-              className="rounded-full shadow-2xl headshot"
+              height={100}
+              className="rounded-full shadow-2xl headshot object-cover max-h-80 md:max-h-full object-top"
               style={{
                 transform: `perspective(1000px) rotateX(${tiltValues.tiltY}deg) rotateY(${tiltValues.tiltX}deg)`,
               }}
