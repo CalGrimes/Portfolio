@@ -23,6 +23,14 @@ import Link from 'next/link';
 //     };
 // }
 
+export function generateStaticParams() {
+    const posts = getSortedPostsData();
+
+    return posts.map((post) => ({
+            postId: post.id,
+    }));
+}
+
 
 export default async function Post({ params }: { params: { postId: string } }) {
     const posts = getSortedPostsData(); // deduped
@@ -54,9 +62,10 @@ export default async function Post({ params }: { params: { postId: string } }) {
             </span>
         ))}
     </div>
-          <p className='flex flex-row mb-14'>Created on {date}</p>
-</div>
-            <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          <p className='flex flex-row'>Created on {date}</p>
+          <hr className="my-4" />
+</div>      
+            <div className="markdown dark:text-white" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
       </section>
     </main>
