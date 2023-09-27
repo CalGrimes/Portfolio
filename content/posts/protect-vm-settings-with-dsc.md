@@ -1,6 +1,6 @@
 ---
 id: 'protect-vm-settings-with-dsc'
-date: '00-00-00'
+date: '27-09-23'
 title: 'Set up a DSC and configure a desired state'
 description: 'In this project, I complete the Azure Exercise - Set up a DSC and configure a desired state.'
 tags: ['Cloud', 'Azure', 'DevOps']
