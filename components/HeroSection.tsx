@@ -7,42 +7,18 @@ import { useState, useEffect } from "react";
 import Certifications from "./Certifications"
 
 const HeroSection: React.FC = () => {
-  const [tiltValues, setTiltValues] = useState({ tiltX: 0, tiltY: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (event: { clientX: any; clientY: any }) => {
-      const { clientX, clientY } = event;
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      const maxTilt = 20; // Adjust this value to control the tilt intensity
-
-      const tiltX = (clientX - centerX) / centerX * maxTilt*2;
-      const tiltY = (clientY - centerY) / centerY * maxTilt;
-
-      setTiltValues({ tiltX, tiltY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
 return (
     <section id="home">
       <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 pt-16 sm:pt-16 sm:pb-10 md:pt-16 md:pb-6 md:flex-row md:space-x-4 md:text-left">
-        <div className="md:mt-2">
-          <Image
-              src={"/headshot.png"}
-              alt=""
-              width={325}
-              height={100}
-              className="rounded-full shadow-2xl headshot object-cover max-h-80 md:max-h-full object-top"
-              style={{
-                transform: `perspective(1000px) rotateX(${tiltValues.tiltY}deg) rotateY(${tiltValues.tiltX}deg)`,
-              }}
-          />
+        <div className="md:mt-2 hero-image">
+        <Image
+          src={"/headshot.png"}
+          alt=""
+          width={325}
+          height={100}
+          className="rounded-full shadow-2xl headshot object-cover max-h-80 md:max-h-full object-top hover:[transform:rotateY(180deg)] [transition: all 0.65s] ease"
+        />
         </div>
         <div className="md:mt-2 md:w-3/5">
           <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-7xl cursor-default">Hi, I&#39;m Cal!</h1>
