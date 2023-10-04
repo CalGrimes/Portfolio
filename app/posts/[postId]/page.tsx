@@ -65,7 +65,7 @@ export default async function Post({ params }: { params: { postId: string } }) {
           <p className='flex flex-row'>Created on {date}</p>
           <hr className="my-4" />
 </div>      
-            <div className="markdown dark:text-white" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+            <div className="markdown dark:text-stone-300" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
       </section>
     </main>

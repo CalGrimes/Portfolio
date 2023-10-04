@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @media (min-width: 768px) {
   .experience {
     width: 500px;
@@ -88,16 +90,30 @@
   padding-left: 10px;
 }
 
+.markdown pre, code {
+  @apply bg-stone-200;
+  @apply dark:bg-stone-800;
+}
+.markdown :not(pre) > code {
+  padding: 0.2rem 0.4rem;
+  @apply dark:bg-stone-800;
+  @apply rounded-md;
+}
+
 /* Style code blocks */
 .markdown pre {
-  background-color: #f0f0f0;
+ 
+  margin-top: 2px;
   padding: 10px;
   border-radius: 5px;
   overflow: auto;
+  scrollbar-width: thin;
 }
 
 .markdown code {
   font-family: Consolas, Monaco, monospace;
+  @apply dark:text-amber-300;
+  @apply text-purple-800
 }
 
 /* Style inline code */
@@ -241,3 +257,20 @@
 .markdown h3 + ul li {
   margin-left: 20px;
 }
+
+
+/* Works on Chrome, Edge, and Safari */
+.markdown pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.markdown pre::-webkit-scrollbar-track {
+  background-color: lightgray;
+  border-radius: 6px;
+}
+
+.markdown pre::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 6px;
+}
+
