@@ -2,8 +2,8 @@
 import React from "react"
 import PostCard from "@/components/PostCard"
 import { useSearchParams } from 'next/navigation'
+import Tag from "@/components/Tag";
 
-// <Posts category={category} posts={posts} /> optional category
 interface Props {
   posts: BlogPost[];
 }
@@ -11,42 +11,45 @@ interface Props {
 export default function Posts({ posts }: Props) {
   const searchParams = useSearchParams()
  
-  const filterBy = searchParams.get('tag')
+  const filterBy = searchParams.getAll('tag')
 
-  const tags = posts.map((post) => post.tags).flat();
-  if (filterBy) {
-    posts = posts.filter((post) => post.tags.includes(filterBy));
+  // distinct tags non case sensitive
+  const tags = posts.map((post) => post.tags).flat().filter((tag, index, self) => self.indexOf(tag) === index).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+
+
+  if (filterBy.length > 0) {
+    posts = posts.filter((post) => filterBy.every(tag => post.tags.includes(tag)));
   }
 
-  
   return (
     <>
     <section id="tag-filter">
     <h2 className="mr-4 pb-4">Filter By:</h2>
-    <div className="flex flex-wrap mt-auto space-y-4 mb-4">
-       <a className="mt-4" href={`/blog/`}>
-            <span
-              className="
-              bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 text-gray-500 dark:text-gray-200 rounded 
-               dark:hover:brightness-50 hover:opacity-70 cursor-pointer hover:transition-all duration-300 ease-in-out"
-            >
-              All
-            </span>
-      </a>
-       {tags.map((tag, index) => (
-            <a href={`/blog?tag=${tag}`} key={index}>
-            <span
-              key={index}
-              className="
-              bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 text-gray-500 dark:text-gray-200 rounded 
-               dark:hover:brightness-50 hover:opacity-70 cursor-pointer hover:transition-all duration-300 ease-in-out"
-            >
-              {tag}
-            </span>
-            </a>
-          ))}
+    <div className="flex flex-wrap mt-auto space-y-4 mb-4 items-end">
+      <Tag tag="All" link="/blog" />
+       {tags.map((tag, index) => {
+            const selectedTags = filterBy.concat(tag);
+            const queryParam = selectedTags.join('&tag=');
+            return (
+              <Tag tag={tag} link={`/blog?tag=${queryParam}`} key={index} />
+            )
+          })}
       </div>
     </section>
+    { filterBy.length > 0 &&
+    <section id="selected-tags">
+    <h2 className="mr-4 pb-4">Selected:</h2>
+    <div className="flex flex-wrap mt-auto space-y-4 mb-4">
+       {filterBy.map((tag, index) => {
+            const selectedTags = filterBy.filter((t) => t !== tag);
+            const queryParam = selectedTags.join('&tag=');
+            return (
+              <Tag tag={tag} link={`/blog?tag=${queryParam}`} key={index} />
+            )
+          })}
+      </div>
+      </section>
+    }
     <section id="posts">
       <div className="flex flex-col animate-fadeIn animation-delay-2 sm:pb-10 md:pb-6 md:flex-row md:space-x-4 md:text-left">
        <ul className="w-full">

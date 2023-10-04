@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useEffect, useState } from "react";
+import Tag from "@/components/Tag";
 
 interface PostCardProps {
   id: string;
@@ -38,16 +39,7 @@ const PostCard: React.FC<PostCardProps> = ({ id, date, title, description, tags,
     <div className="flex flex-wrap mt-auto ">
         {tags &&
           tags.map((tag, index) => (
-            <Link className="mt-2" href={`/blog?tag=${tag}`} key={index}>
-            <span
-              key={tag}
-              className="
-              bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 text-gray-500 dark:text-gray-200 rounded 
-               dark:hover:brightness-50 hover:opacity-70 cursor-pointer hover:transition-all duration-300 ease-in-out"
-            >
-              {tag}
-            </span>
-            </Link>
+            <Tag tag={tag} link={`/blog?tag=${tag}`} key={index} />
           ))}
           </div>
     </div>
