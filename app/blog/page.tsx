@@ -21,7 +21,9 @@ export default function BlogPostings() {
       <section>
         <div className="flex flex-col animate-fadeIn animation-delay-2 my-10 pt-16 sm:pt-16 sm:pb-10 md:pt-16 md:pb-6 md:flex-row md:space-x-4 md:text-left">
         </div>
+        <h1 className="text-3xl font-bold mb-4">Blog Postings</h1>
       </section>
+      
       <Posts posts={posts} />
     </main>
   )

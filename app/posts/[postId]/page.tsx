@@ -2,6 +2,7 @@ import { getPostData, getSortedPostsData } from '@/lib/posts'
 import React from 'react'
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Tag from '@/components/Tag';
 
 
 // TODO: Fix Metadata
@@ -64,12 +65,8 @@ export default async function Post({ params }: { params: { postId: string } }) {
         </div>
         <div className="flex animate-fadeIn animation-delay-2 pt-2 sm:pt-2 sm:pb-10 md:pt-2 md:pb-6 md:flex-row md:space-x-4 md:text-left">
             {tags && tags.map((tag, index) => (
-                <span
-                    key={tag}
-                    className="bg-gray-200 dark:bg-zinc-800 px-4 py-2 justify-between mr-2 text-gray-500 dark:text-gray-200 rounded font-semibol dark:hover:brightness-50 hover:opacity-70 cursor-pointer hover:transition-all duration-300 ease-in-out"
-                >
-                    {tag}
-                </span>
+                <Tag tag={tag} link={`/blog?tag=${tag}`} key={index} />
+                
             ))}
         </div>
         <p className='flex flex-row'>Created on {date}</p>
