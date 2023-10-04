@@ -30,7 +30,9 @@ const Certifications = () => {
             <div className="flex flex-row sm:justify-center">
               {certifications.map((certification, idx) => {
                 return (
-                <a href={certification.link} key={idx}>
+                <a
+                className="hover:border border-black dark:border-white rounded-lg p-2 m-2" 
+                href={certification.link} key={idx}>
                   <Image
                     src={certification.image}
                     alt=""

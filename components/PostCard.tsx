@@ -1,6 +1,8 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useEffect, useState } from "react";
 
 interface PostCardProps {
   id: string;
@@ -12,6 +14,16 @@ interface PostCardProps {
 }
 
 const PostCard: React.FC<PostCardProps> = ({ id, date, title, description, tags, thumbnail }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <a href={`/posts/${id}`} className="flex flex-col items-center rounded-lg shadow-lg md:flex-row  p-2 relative ">
     <Image
@@ -23,7 +35,7 @@ const PostCard: React.FC<PostCardProps> = ({ id, date, title, description, tags,
     <div className="flex flex-col justify-between p-4 leading-normal">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{description}</p>
-    <a className="flex flex-wrap mt-auto ">
+    <div className="flex flex-wrap mt-auto ">
         {tags &&
           tags.map((tag, index) => (
             <Link className="mt-2" href={`/blog?tag=${tag}`} key={index}>
@@ -37,7 +49,7 @@ const PostCard: React.FC<PostCardProps> = ({ id, date, title, description, tags,
             </span>
             </Link>
           ))}
-          </a>
+          </div>
     </div>
 </a>
   );
