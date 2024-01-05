@@ -25,14 +25,14 @@ const ProjectsSection = () => {
             <div key={idx}>
               <SlideUp offset="-300px 0px -300px 0px">
                 <div className="flex flex-col animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
-                  <div className="md:w-1/2">
+                  <div className="md:w-1/2 place-content-center mt-auto mb-auto">
                     <Link href={project.link}>
                       <Image
                         src={project.image}
                         alt=""
                         width={1000}
                         height={1000}
-                        className="rounded-xl shadow-xl hover:opacity-70"
+                        className="rounded-xl shadow-xl hover:opacity-70 mt-auto"
                       />
                     </Link>
                   </div>
@@ -44,7 +44,7 @@ const ProjectsSection = () => {
                     {"note" in project && (
                       <div>
                         <h1 className="text-lg font-bold">Note</h1>
-                        <p className="bg-stone-200 p-2 rounded-xl">
+                        <p className="bg-stone-200 dark:bg-stone-800 p-2 rounded-xl shadow-sm text-neutral-600 dark:text-neutral-400 h-16">
                           {project.note}
                           <a className="text-blue-600" href={project.noteLink}> Click here</a>
                         </p>
