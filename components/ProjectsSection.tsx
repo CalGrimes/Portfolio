@@ -40,8 +40,15 @@ const ProjectsSection = () => {
                     <p className="text-xl leading-7 mb-2 text-neutral-600 dark:text-neutral-400">
                       {project.description}
                     </p>
+                    {project.note ? 
+                    <div>
+                      <h1 className="text-lg font-bold ">Note</h1>
+                      <p className="bg-stone-200 p-2 rounded-xl">
+                        {project.note} 
+                        <a className="text-blue-600" href={project.noteLink}> Click here</a>
+                      </p></div> : null}
+                    
                     <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start mb-4">
-                      {/* project tech String[] */}
                       {project.tech && Array.isArray(project.tech) && project.tech.map((tech, idx) => {
                         return (
                           <p
