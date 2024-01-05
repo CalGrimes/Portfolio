@@ -2,7 +2,6 @@ import React from "react"
 import {
   AiOutlineGithub,
   AiOutlineLinkedin,
-  AiOutlineYoutube,
 } from "react-icons/ai"
 import { FaXTwitter } from "react-icons/fa6";
 
