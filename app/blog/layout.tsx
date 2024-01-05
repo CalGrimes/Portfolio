@@ -2,7 +2,7 @@
 import "@/styles/globals.css"
 import Navbar from "@/components/NavbarBlog"
 import Footer from "@/components/Footer"
-import { Providers } from "../providers"
+import { Providers } from "@/app/providers"
 
 export default function RootLayout({
   children,

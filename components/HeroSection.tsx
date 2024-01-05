@@ -3,21 +3,20 @@ import React from "react"
 import Image from "next/image"
 import { Link } from "react-scroll/modules"
 import { HiArrowDown } from "react-icons/hi"
-import { useState, useEffect } from "react";
-import Certifications from "./Certifications"
+import Certifications from "@/components/Certifications"
 
 const HeroSection: React.FC = () => {
 
 return (
     <section id="home">
-      <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 pt-16 sm:pt-16 sm:pb-10 md:pt-16 md:pb-6 md:flex-row md:space-x-4 md:text-left">
+      <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 pt-16 sm:pt-16 sm:pb-10 md:pt-16 md:pb-6 md:flex-row md:space-x-4 md:text-left gap-24">
         <div className="md:mt-2 hero-image">
         <Image
           src={"/headshot.png"}
           alt=""
           width={325}
           height={100}
-          className="rounded-full shadow-2xl headshot object-cover max-h-80 md:max-h-full object-top hover:[transform:rotateY(180deg)] [transition: all 0.65s] ease"
+          className="rounded-full shadow-2xl headshot object-cover max-h-80 md:max-h-full object-top"
         />
         </div>
         <div className="md:mt-2 md:w-3/5">
