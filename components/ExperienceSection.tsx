@@ -2,12 +2,10 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import SlideUp from "./SlideUp"
-import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
-import {useTheme} from "next-themes";
-import experience from "../data/experience.json";
-import { AccordionList } from "./AccordionList"
-import TagNoLink from "./TagNoLink";
+import SlideUp from "@/components/SlideUp"
+import experience from "@/data/experience.json"
+import { AccordionList } from "@/components/AccordionList"
+import TagNoLink from "@/components/TagNoLink"
 
 const ExperienceSection = () => {
   return (
@@ -39,8 +37,8 @@ const ExperienceSection = () => {
                     <h1 className="text-4xl font-bold mb-6">{experience.name}</h1>
                     <AccordionList items={experience.description} />
                     <div className="flex flex-auto align-bottom flex-wrap mt-4">
-                        {experience.tech.map(tech => (
-                                <TagNoLink key={idx} tag={tech} />
+                        {experience.tech.map((tech, index) => (
+                                <TagNoLink key={index} tag={tech} />
                         ))}
                     </div>
                   </div>
