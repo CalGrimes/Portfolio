@@ -7,6 +7,7 @@ import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
 import {useTheme} from "next-themes";
 import projects from "../data/projects.json";
 import { Tooltip } from '@chakra-ui/react'
+import TagNoLink from "./TagNoLink";
 
 
 const ProjectsSection = () => {
@@ -40,16 +41,18 @@ const ProjectsSection = () => {
                     <p className="text-xl leading-7 mb-2 text-neutral-600 dark:text-neutral-400">
                       {project.description}
                     </p>
+                    {project.note ? 
+                    <div>
+                      <h1 className="text-lg font-bold ">Note</h1>
+                      <p className="bg-stone-200 p-2 rounded-xl">
+                        {project.note} 
+                        <a className="text-blue-600" href={project.noteLink}> Click here</a>
+                      </p></div> : null}
+                    
                     <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start mb-4">
-                      {/* project tech String[] */}
                       {project.tech && Array.isArray(project.tech) && project.tech.map((tech, idx) => {
                         return (
-                          <p
-                            key={idx}
-                            className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 dark:bg-zinc-800 dark:text-gray-200 rounded font-semibold"
-                          >
-                            {tech}
-                          </p>
+                          <TagNoLink key={idx} tag={tech} />
                         )
                       })}
                     </div>
