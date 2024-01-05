@@ -18,7 +18,8 @@ module.exports = {
       animation: {
         fadeIn: "fadeIn 1.5s",
         bounce:
-          "bounce 0.5s alternate cubic-bezier(0.95, 0.05, 0.795, 0.035) infinite",
+          "bounce 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s",
+        shake: "shake 0.6s cubic-bezier(.36,.07,.19,.97) both",
         slideUp: "slideUp 0.5s",
         slideUpEaseInOut: "slideUp 0.5s ease-in-out",
         slideUpCubiBezier: "slideUp 1s cubic-bezier(0.165, 0.84, 0.44, 1)",
@@ -41,6 +42,12 @@ module.exports = {
         bounce: {
           from: { transform: "translateY(10px)" },
           to: { transform: "translateY(0)" },
+        },
+        shake: {
+          "10%, 90%": { transform: "translate3d(-1px, 0, 0)" },
+          "20%, 80%": { transform: "translate3d(2px, 0, 0)" },
+          "30%, 50%, 70%": { transform: "translate3d(-4px, 0, 0)" },
+          "40%, 60%": { transform: "translate3d(4px, 0, 0)" },
         },
       },
     },
