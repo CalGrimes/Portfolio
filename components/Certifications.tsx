@@ -31,7 +31,7 @@ const Certifications = () => {
               {certifications.map((certification, idx) => {
                 return (
                 <a
-                className="hover:scale-110 ease-in duration-75 border-black dark:border-white rounded-lg p-2 m-2 hover:border-2" 
+                className="hover:scale-110 ease-in duration-75 border-white dark:border-stone-900 rounded-lg p-2 m-2 border-2 hover:border-black dark:hover:border-white" 
                 href={certification.link} key={idx}>
                   <Image
                     src={certification.image}
