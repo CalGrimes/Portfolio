@@ -281,3 +281,7 @@
   border-radius: 6px;
 }
 
+.zoom {
+  transition: transform .2s;
+  margin: 0 auto;
+}
