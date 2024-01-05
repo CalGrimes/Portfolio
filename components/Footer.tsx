@@ -1,10 +1,10 @@
 import React from "react"
 import {
   AiOutlineGithub,
-  AiOutlineTwitter,
   AiOutlineLinkedin,
   AiOutlineYoutube,
 } from "react-icons/ai"
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -26,7 +26,7 @@ const Footer = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <AiOutlineTwitter
+            <FaXTwitter
               className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100"
               size={30}
             />
