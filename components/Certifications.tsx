@@ -38,7 +38,7 @@ const Certifications = () => {
                     alt=""
                     width={150}
                     height={100}    
-                    className="object-cover aspect-square"       
+                    className="object-cover aspect-square"  
                   />
                 </a>
               )

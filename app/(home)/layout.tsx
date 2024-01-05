@@ -10,11 +10,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html lang="en" suppressHydrationWarning>
       <head />
       <body className="dark:bg-stone-900 bg-stone-100">
         <Providers>
