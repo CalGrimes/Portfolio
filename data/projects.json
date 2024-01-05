@@ -1,11 +1,13 @@
 [
   {
     "name": "Ecommerce Hot Sauce",
-    "tech": ["Vue", "Nuxt", "Firebase"],
-    "description": "Ecommerce store built with Vue, Nuxt, Firebase, Contentful CMS, Stripe.",
+    "tech": ["Vue", "Nuxt", "Firebase", "AWS"],
+    "description": "Ecommerce store built with Vue, Nuxt, Firebase, Contentful CMS and Stripe.",
     "image": "/ecommerce-hotsauce.png",
     "github": "https://github.com/CalGrimes/ECommerce-HotSauce",
-    "link": "https://hotsauce-ecommerce.netlify.app/"
+    "link": "https://e-commerce-hot-sauce.vercel.app/",
+    "note": "Also deployed this as a static site to AWS with S3, API Gateway and Lambda.",
+    "noteLink": "http://consulting-556567.s3-website.eu-west-2.amazonaws.com/"
   },
   {
     "name": "Movie Manager",
