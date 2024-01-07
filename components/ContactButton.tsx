@@ -1,6 +1,15 @@
 import { Button } from '@chakra-ui/react'
 
-const ContactButton = ({ id, effect, setEffect, href, children }) => {
+interface Props {
+    id: string;
+    effect: boolean;
+    setEffect: any;
+    href: string;
+    children: React.ReactNode;
+}
+
+
+const ContactButton = ({ id, effect, setEffect, href, children }: Props) => {
     return (
             <a href={href}>
                 <Button 
