@@ -40,9 +40,7 @@ const ExperienceSection = () => {
                     <AccordionList items={experience.description} />
                     <div className="flex flex-auto align-bottom flex-wrap mt-4">
                         {experience.tech.map((tech,idx2) => (
-                                <div key={idx2} className="bg-gray-200 dark:bg-zinc-800 px-4 py-2 mr-2 mt-2 text-gray-500 dark:text-gray-200 rounded font-semibold">
-                                    {tech}
-                                </div>
+                                <TagNoLink key={idx2} tag={tech} />
                         ))}
                     </div>
                   </div>
