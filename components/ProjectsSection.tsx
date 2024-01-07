@@ -2,17 +2,18 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import SlideUp from "@/components/SlideUp"
+import SlideUp from "./SlideUp"
 import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
-import projects from "@/data/projects.json"
+import {useTheme} from "next-themes";
+import projects from "../data/projects.json";
 import { Tooltip } from '@chakra-ui/react'
-import TagNoLink from "@/components/TagNoLink"
+import TagNoLink from "./TagNoLink";
 
 
 const ProjectsSection = () => {
   return (
     <section id="projects">
-    <div className="my-12 pb-12 md:pt-16">
+    <div className="my-12 pb-12 md:pt-16 md:pb-48">
       <h1 className="my-10 text-center font-bold text-4xl ">
         Projects
         <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded dark:bg-amber-400 bg-purple-800`} />

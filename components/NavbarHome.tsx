@@ -1,6 +1,6 @@
 "use client" // this is a client component
 import React from "react"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll/modules"
 import  Link from "next/link"
 import { usePathname } from "next/navigation"
