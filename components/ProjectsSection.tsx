@@ -44,7 +44,7 @@ const ProjectsSection = () => {
                     {"note" in project && (
                       <div>
                         <h1 className="text-lg font-bold">Note</h1>
-                        <p className="bg-stone-200 dark:bg-stone-800 p-2 rounded-xl shadow-sm text-neutral-600 dark:text-neutral-400 h-16">
+                        <p className="bg-stone-200 dark:bg-stone-800 p-2 rounded-xl shadow-sm text-neutral-600 dark:text-neutral-400">
                           {project.note}
                           <a className="text-blue-600" href={project.noteLink}> Click here</a>
                         </p>
