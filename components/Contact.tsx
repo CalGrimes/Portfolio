@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from '@chakra-ui/react'
+
+import ContactButton from "@/components/ContactButton";
 import OutlookIcon from "@/components/OutlookIcon";
 import LinkedInIcon from "@/components/LinkedInIcon";
 
@@ -9,18 +10,6 @@ type FormValues = {
     email: string;
     message: string;
 };
-const ContactButton = ({ id, effect, setEffect, href, children }) => (
-    <a href={href}>
-        <Button 
-            id={id} 
-            className={`${effect && "animate-shake"} text-center p-4 rounded-xl shadow-xl bg-stone-200 dark:bg-stone-800 w-60 gap-4 hover:scale-95 ease-in duration-75 h-24`}
-            onClick={() => setEffect(true)}
-            onAnimationEnd={() => setEffect(false)}
-        >
-            {children}
-        </Button>
-    </a>
-);
 
 const Contact = () => {
     const [outlookEffect, setOutlookEffect] = useState(false);
