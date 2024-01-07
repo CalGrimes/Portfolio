@@ -32,7 +32,8 @@ const ProjectsSection = () => {
                         alt=""
                         width={1000}
                         height={1000}
-                        className="rounded-xl shadow-xl hover:opacity-70 mt-auto"
+                        className="rounded-xl shadow-xl hover:scale-105 ease-in duration-75
+                        mt-auto"
                       />
                     </Link>
                   </div>
