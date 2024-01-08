@@ -15,12 +15,9 @@ const skills = [
 
 const SkillsSection = () => {
     const allSkills = [...skills, ...skills];
-    function capitalizeFirstLetter(string: string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
 
   return (
-    <section id="skills" className='max-w-4xl mt-12'>
+    <section id="skills" className='sm:max-w-4xl md:w-auto mt-12 w-screen'>
         <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
             Technologies
         </h1>

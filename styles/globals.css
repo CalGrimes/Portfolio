@@ -295,14 +295,16 @@
 
 
 .marquee {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .marquee-content {
   display: flex;
   width: max-content;
+  overflow: hidden;
   animation: marquee 10s linear infinite;
 }
+
 
 @keyframes marquee {
   0% { transform: translateX(0); }
