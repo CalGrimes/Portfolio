@@ -10,7 +10,7 @@ const skills = [
   "Nuxt",
   "Python",
   "Java",
-  "Jupyter Notebook",
+  "Jupyter-notebook",
 ];
 
 const SkillsSection = () => {
