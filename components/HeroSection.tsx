@@ -27,7 +27,7 @@ return (
             <span className={`"font-semibold dark:text-amber-400 text-purple-800`}>
                 Software Engineer{" "}
             </span>
-            working on personalized solutions for the modern world.
+            working on personalised solutions for the modern world.
           </p>
           <Link
               to="projects"
