@@ -276,3 +276,41 @@
   transition: transform .2s;
   margin: 0 auto;
 }
+
+/*
+.skills-scroll {
+  --d: 15s; 
+  
+  display: grid;
+  grid-template-columns: repeat(6, 300px); 
+  overflow: hidden;
+  position: relative; 
+}
+
+.skills-scroll > * {
+  animation: scroll var(--d) linear infinite;
+  white-space: nowrap;
+}
+*/
+
+
+.marquee {
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-content > div > img {
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+}
