@@ -1,6 +1,6 @@
 'use client'
 import React from "react"
-import TagNoLink from "@/components/TagNoLink";
+import TagNoLink from "./TagNoLink"
 
 const skills = [
   "Java",
