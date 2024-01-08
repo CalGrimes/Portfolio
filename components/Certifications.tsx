@@ -28,7 +28,7 @@ const Certifications = () => {
                 <h1 className="text-center text-2xl font-bold mb-6 md:text-left w-full">
                     Certifications
                 </h1>
-            <div className="flex flex-row justify-center md:justify-start">
+            <div className="flex flex-row justify-center md:justify-start overflow-scroll">
               {certifications.map((certification, idx) => {
                 return (
                 <a
