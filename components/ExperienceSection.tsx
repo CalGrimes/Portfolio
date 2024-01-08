@@ -11,8 +11,8 @@ import TagNoLink from "./TagNoLink";
 
 const ExperienceSection = () => {
   return (
-    <section id="experience">
-        <div className="my-12 pb-12 md:pt-16 md:pb-48">
+    <section id="experience" className="max-w-3xl md:max-w-5xl mx-auto">
+        <div className="my-12 pb-12 md:pt-16 md:pb-24 justify-around">
             <h1 className="my-10 text-center font-bold text-4xl">
                 Experience
                 <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded dark:bg-amber-400 bg-purple-800`} />

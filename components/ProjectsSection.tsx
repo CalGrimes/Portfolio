@@ -12,7 +12,7 @@ import TagNoLink from "./TagNoLink";
 
 const ProjectsSection = () => {
   return (
-    <section id="projects">
+    <section id="projects" className="max-w-3xl md:max-w-5xl mx-auto">
     <div className="my-12 pb-12 md:pt-16 md:pb-48">
       <h1 className="my-10 text-center font-bold text-4xl ">
         Projects
