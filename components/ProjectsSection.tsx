@@ -2,12 +2,11 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import SlideUp from "./SlideUp"
+import SlideUp from "@/components/SlideUp"
 import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
-import {useTheme} from "next-themes";
-import projects from "../data/projects.json";
+import projects from "@/data/projects.json"
 import { Tooltip } from '@chakra-ui/react'
-import TagNoLink from "./TagNoLink";
+import TagNoLink from "@/components/TagNoLink"
 
 
 const ProjectsSection = () => {

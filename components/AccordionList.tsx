@@ -7,18 +7,17 @@ import {
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
-  } from '@chakra-ui/react'
-  import { Box } from '@chakra-ui/react'
+} from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
-  type Item = {
+type Item = {
     title: string;
     content: string;
-  }
-  
-  type AccordionListProps = {
+}
+
+type AccordionListProps = {
     items: Item[];
-  }
-  
+}
 
 export const AccordionList = ({ items }: AccordionListProps) => {
     return (
