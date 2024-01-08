@@ -26,7 +26,7 @@ export const AccordionList = ({ items }: AccordionListProps) => {
             {items.map((item, index) => (
                 <AccordionItem key={index}>
                     <h2>
-                        <AccordionButton className='hover:scale-x-105 ease-in duration-75'>
+                    <AccordionButton className='sm:hover:scale-100 hover:scale-x-105 ease-in duration-75'>
                             <Box as="span" flex='1' textAlign='left' fontWeight='bold' className='p-2'>
                                 <p className='rounded border border-xl border-black dark:bg-amber-400 bg-purple-800 text-white dark:text-black px-2 inline-block'>{item.title}</p>
                             </Box>

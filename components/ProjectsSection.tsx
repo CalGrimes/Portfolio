@@ -12,7 +12,7 @@ import TagNoLink from "./TagNoLink";
 
 const ProjectsSection = () => {
   return (
-    <section id="projects">
+    <section id="projects" className="max-w-3xl md:max-w-5xl mx-auto">
     <div className="my-12 pb-12 md:pt-16 md:pb-48">
       <h1 className="my-10 text-center font-bold text-4xl ">
         Projects
@@ -32,7 +32,8 @@ const ProjectsSection = () => {
                         alt=""
                         width={1000}
                         height={1000}
-                        className="rounded-xl shadow-xl hover:opacity-70 mt-auto"
+                        className="rounded-xl shadow-xl hover:scale-105 ease-in duration-75
+                        mt-auto"
                       />
                     </Link>
                   </div>
@@ -44,7 +45,7 @@ const ProjectsSection = () => {
                     {"note" in project && (
                       <div>
                         <h1 className="text-lg font-bold">Note</h1>
-                        <p className="bg-stone-200 dark:bg-stone-800 p-2 rounded-xl shadow-sm text-neutral-600 dark:text-neutral-400 h-16">
+                        <p className="bg-stone-200 dark:bg-stone-800 p-2 rounded-xl shadow-sm text-neutral-600 dark:text-neutral-400">
                           {project.note}
                           <a className="text-blue-600" href={project.noteLink}> Click here</a>
                         </p>

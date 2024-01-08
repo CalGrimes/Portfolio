@@ -44,7 +44,7 @@ export default function Posts({ posts }: Props) {
             const selectedTags = filterBy.filter((t) => t !== tag);
             const queryParam = selectedTags.join('&tag=');
             return (
-              <Tag tag={tag} link={`/blog?tag=${queryParam}`} key={index} />
+              <Tag tag={tag} link={`/blog?tag=${queryParam}`} key={index}/>
             )
           })}
       </div>
