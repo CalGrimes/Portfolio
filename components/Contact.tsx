@@ -24,7 +24,7 @@ const Contact = () => {
                 Connect
                 <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded dark:bg-amber-400 bg-purple-800`} />
             </h1>
-            <div className="flex flex-col space-y-4 sm:space-y-0 sm:space-x-4 sm:flex-row justify-center">
+            <div className="flex flex-col space-y-4 sm:space-y-0 sm:space-x-4 sm:flex-row justify-center w-auto">
                 <ContactButton 
                     id="OutlookContact" 
                     effect={outlookEffect} 
