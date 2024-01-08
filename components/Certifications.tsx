@@ -28,11 +28,11 @@ const Certifications = () => {
                 <h1 className="text-center text-2xl font-bold mb-6 md:text-left w-full">
                     Certifications
                 </h1>
-            <div className="flex flex-row justify-center md:justify-start overflow-scroll">
+            <div className="flex flex-row justify-center md:justify-start overflow-x-scroll sm:overflow-hidden">
               {certifications.map((certification, idx) => {
                 return (
                 <a
-                className="hover:scale-110 ease-in duration-75 border-stone-100 dark:border-stone-900 rounded-lg p-2 m-2 border-2 hover:border-black dark:hover:border-white flex items-center justify-center overflow-hidden flex-shrink-0" 
+                className="hover:scale-110 ease-in duration-75 sm:border-stone-100 sm:dark:border-stone-900 rounded-lg p-2 m-2 sm:border-2 sm:hover:border-black sm:dark:hover:border-white flex items-center justify-center overflow-hidden flex-shrink-0" 
                 href={certification.link} key={idx}>
                   <Tooltip label={certification.name} placement="top" aria-label='tooltip' className='dark:bg-amber-400 dark:text-black text-white font-semibold bg-purple-800 p-2 rounded-md'>
                   <Image
