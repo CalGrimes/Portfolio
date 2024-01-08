@@ -296,6 +296,7 @@
 
 .marquee {
   overflow: hidden !important;
+  mask: linear-gradient(to right, transparent, black 10px, black 90%, transparent);
 }
 
 .marquee-content {

@@ -21,7 +21,7 @@ const SkillsSection = () => {
         <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
             Technologies
         </h1>
-      <div className="marquee bg-gray-200 dark:bg-stone-800">
+      <div className="marquee bg-gray-200 dark:bg-stone-800 rounded-xl">
         <div className="marquee-content space-x-4 py-2">
           {allSkills.map((skill, index) => (
             <div key={index} id={skill} className='shadow-xl rounded-xl bg-white dark:bg-stone-900 py-2'>
