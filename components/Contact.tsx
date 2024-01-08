@@ -1,8 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from '@chakra-ui/react'
+
+import ContactButton from "@/components/ContactButton";
 import OutlookIcon from "@/components/OutlookIcon";
-import LinkedInContact from "@/components/LinkedInContact";
+import LinkedInIcon from "@/components/LinkedInIcon";
+
+type FormValues = {
+    name: string;
+    email: string;
+    message: string;
+};
 
 const Contact = () => {
     const [outlookEffect, setOutlookEffect] = useState(false);
@@ -17,36 +24,26 @@ const Contact = () => {
                 Connect
                 <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded dark:bg-amber-400 bg-purple-800`} />
             </h1>
-            <div className="flex flex-row justify-center space-x-4">
-                <a href="mailto:cal.grimes@outlook.com">
-                <Button id="OutlookContact" className={`${
-                    outlookEffect && "animate-shake"
-                }
-                text-center p-4 rounded-xl shadow-xl bg-stone-200 dark:bg-stone-800 w-60 gap-4 hover:scale-95 ease-in duration-75 h-24`}
-                onClick={() => {
-                    setOutlookEffect(true);
-                }}
-                onAnimationEnd={() => setOutlookEffect(false)}
+            <div className="flex flex-col space-y-4 sm:space-y-0 sm:space-x-4 sm:flex-row justify-center">
+                <ContactButton 
+                    id="OutlookContact" 
+                    effect={outlookEffect} 
+                    setEffect={setOutlookEffect} 
+                    href="mailto:cal.grimes@outlook.com"
                 >
                     <OutlookIcon />
-                </Button>
-                </a>
-                <a href="https://www.linkedin.com/in/calgrimes/">
-                <Button id="LinkedInContact" className={`${
-                    linkedInEffect && "animate-shake"
-                }
-                text-center p-4 rounded-xl shadow-xl bg-stone-200 dark:bg-stone-800 w-60 gap-4 hover:scale-95 ease-in duration-75 h-24`}
-                onClick={() => {
-                    setLinkedInEffect(true);
-                }}
-                onAnimationEnd={() => setLinkedInEffect(false)}
+                </ContactButton>
+                <ContactButton 
+                    id="LinkedInIcon" 
+                    effect={linkedInEffect} 
+                    setEffect={setLinkedInEffect} 
+                    href="https://www.linkedin.com/in/calgrimes/"
                 >
-                    <LinkedInContact />
-                </Button>
-                </a>
+                    <LinkedInIcon />
+                </ContactButton>
             </div>
-            
-        
+
+
 
         </section>
     );

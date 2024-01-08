@@ -27,7 +27,7 @@ const Certifications = () => {
                 <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
                     Certifications
                 </h1>
-            <div className="flex flex-row sm:justify-center">
+            <div className="flex flex-row ">
               {certifications.map((certification, idx) => {
                 return (
                 <a
@@ -36,8 +36,8 @@ const Certifications = () => {
                   <Image
                     src={certification.image}
                     alt=""
-                    width={150}
-                    height={100}    
+                    width={125}
+                    height={75}    
                     className="object-cover aspect-square"  
                   />
                 </a>

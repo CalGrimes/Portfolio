@@ -4,13 +4,14 @@ import Image from "next/image"
 import { Link } from "react-scroll/modules"
 import { HiArrowDown } from "react-icons/hi"
 import Certifications from "@/components/Certifications"
+import SkillsSection from "./SkillsSection"
 
 const HeroSection: React.FC = () => {
 
 return (
-    <section id="home">
+    <section id="home" className="max-w-full">
       <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 pt-16 sm:pt-16 sm:pb-10 md:pt-16 md:pb-6 md:flex-row md:space-x-4 md:text-left gap-24">
-        <div className="md:mt-2 hero-image">
+        <div className="md:mt-2">
         <Image
           src={"/headshot.png"}
           alt=""
@@ -30,7 +31,7 @@ return (
           </p>
           <Link
               to="projects"
-              className={`font-semibold px-6 py-3 rounded shadow cursor-pointer dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-black bg-purple-800 hover:bg-purple-800 text-white dark:hover:brightness-50 hover:opacity-70`}
+              className={`font-semibold px-6 py-3 rounded shadow cursor-pointer dark:bg-amber-400  dark:text-black bg-purple-800 text-white 0 hover:scale-105 ease-in duration-75 hover:border-1 border-black`}
               activeClass="active"
               spy={true}
               smooth={true}
@@ -40,12 +41,13 @@ return (
             Projects
           </Link>
           <Certifications />
+          <SkillsSection />
 
         </div>
       </div>
       <div className="flex flex-row items-center text-center justify-center ">
         <Link
-          to="experience"
+          to="skills"
           activeClass="active"
           spy={true}
           smooth={true}
@@ -56,6 +58,7 @@ return (
         </Link>
       </div>
     </section>
+    
   )
 }
 
