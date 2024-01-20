@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Ecommerce Hot Sauce",
     "tech": ["Vue", "Nuxt", "Firebase", "AWS"],
     "description": "Ecommerce store built with Vue, Nuxt, Firebase, Contentful CMS and Stripe.",
@@ -10,6 +11,7 @@
     "noteLink": "http://consulting-556567.s3-website.eu-west-2.amazonaws.com/"
   },
   {
+    "id": 2,
     "name": "Movie Manager",
     "tech": [".NET", "Azure", "SQLite"],
     "description":
@@ -19,6 +21,7 @@
     "link": "https://movieappmvc20230621183851.azurewebsites.net/"
   },
   {
+    "id": 3,
     "name": "Blog Site",
     "description":
     "My blog site built with Gatsby in which I gained my JAMStack Certification.",
