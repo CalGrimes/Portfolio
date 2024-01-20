@@ -3,26 +3,20 @@ import React from "react"
 import TagNoLink from "@/components/TagNoLink";
 
 const skills = [
-  "Java",
-  "C#",
-  ".NET",
-  "SQL",
-  "Bash",
-  "Python",
-  "React",
-  "Next.js",
-  "Tailwind CSS",
-  "Git",
-  "Docker",
-  "Jupyter Notebooks",
-  "Azure",
+  "Cloud Computing",
+  "Data Science",
+  "Data Engineering",
+  "Machine Learning",
+  "Software Engineering",
+  "Web Development",
+  "DevOps",
 ];
 
 const AboutSection = () => {
 
   return (
     <section id="about" className="max-w-3xl md:max-w-5xl mx-auto">
-      <div className="my-12 pb-12 md:pt-16 md:pb-48">
+      <div className="my-6 pb-12 md:pt-16 md:pb-24">
         <h1 className="my-10 text-center font-bold text-4xl">
           About Me
           <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded bg-purple-800 dark:bg-amber-400`} />
@@ -41,12 +35,7 @@ const AboutSection = () => {
               <span className="font-bold">{" creative"}</span> software engineer
               based in Liverpool, whilst also open to relocation.
             </p>
-            <br />
-            <p>
-              I graduated Software Engineering from Liverpool John Moores in 2022, achieving a
-              First Class Honours. Since graduating I have been working as a Software Engineer
-              and Studying for my Masters in Artificial Intelligence in parallel.
-            </p>
+            
             <br />
             <p>
               I have a wide range of hobbies including the gym, playing sports, skydiving, and socialising with friends.
