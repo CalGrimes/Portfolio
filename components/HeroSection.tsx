@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Link } from "react-scroll/modules"
 import { HiArrowDown } from "react-icons/hi"
 import Certifications from "@/components/Certifications"
-import SkillsSection from "./SkillsSection"
+import SkillsSection from "@/components/SkillsSection"
 
 const HeroSection: React.FC = () => {
 

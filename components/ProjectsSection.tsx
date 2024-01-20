@@ -2,12 +2,10 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import SlideUp from "./SlideUp"
 import { BsGithub, BsArrowUpRightSquare, BsFillInfoCircleFill } from "react-icons/bs"
-import {useTheme} from "next-themes";
-import projects from "../data/projects.json";
+import projects from "@/data/projects.json";
 import { Tooltip } from '@chakra-ui/react'
-import TagNoLink from "./TagNoLink";
+import TagNoLink from "@/components/TagNoLink";
 
 const ProjectLinks = ({project}: any) => {
   return (
@@ -102,7 +100,7 @@ const ThreeCards = ( {projects}: any ) => {
 
                 <div className="relative mt-8 flex items-center gap-x-4">
                   <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start mb-4">
-                    {project.tech && Array.isArray(project.tech) && project.tech.map((tech, idx) => {
+                    {project.tech && Array.isArray(project.tech) && project.tech.map((tech:string, idx:number) => {
                       return (
                         <TagNoLink key={idx} tag={tech} />
                       )

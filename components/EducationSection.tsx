@@ -1,13 +1,9 @@
 'use client'
 import React from "react"
 import Image from "next/image"
-import Link from "next/link"
 import SlideUp from "./SlideUp"
-import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
-import {useTheme} from "next-themes";
-import education from "../data/education.json";
-import { AccordionList } from "./AccordionList"
-import TagNoLink from "./TagNoLink";
+import education from "@/data/education.json";
+import TagNoLink from "@/components/TagNoLink";
 
 const EducationSection = () => {
   return (

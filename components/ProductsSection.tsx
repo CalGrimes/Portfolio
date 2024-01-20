@@ -1,12 +1,5 @@
 'use client'
 import React from "react"
-import Image from "next/image"
-import Link from "next/link"
-import SlideUp from "./SlideUp"
-import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
-import projects from "../data/projects.json";
-import { Tooltip } from '@chakra-ui/react'
-import TagNoLink from "./TagNoLink";
 
 
 const posts = [

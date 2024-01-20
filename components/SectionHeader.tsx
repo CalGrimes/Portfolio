@@ -1,12 +1,10 @@
 "use client"
 
-import { ScrollLink } from "react-scroll"
 import { useState } from "react";
-import ExperienceSection from "./ExperienceSection";
-import ProjectsSection from "./ProjectsSection";
-import SlideUp from "./SlideUp";
-import ProductsSection from "./ProductsSection";
-import Resume from "./Resume";
+import ProjectsSection from "@/components/ProjectsSection";
+import SlideUp from "@/components/SlideUp";
+import ProductsSection from "@/components/ProductsSection";
+import Resume from "@/components/Resume";
 
 const tabs = [
     { name: 'Resume', href: '#', current: true },
@@ -14,16 +12,16 @@ const tabs = [
     { name: 'Projects', href: '#', current: false },
   ]
   
-  function classNames(...classes) {
+  function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ')
   }
 
   
     const SectionHeaders = () => {
 
-    const [currentTab, setCurrentTab] = useState(tabs.find((tab) => tab.current).name)
+    const [currentTab, setCurrentTab] = useState((tabs.find((tab) => tab.current) as { name: string }).name);
 
-    function handleTabChange(tab) {
+    function handleTabChange(tab: any) {
         setCurrentTab(tab.name)
         tabs.forEach((t) => {
             t.current = t.name === tab.name
@@ -42,7 +40,7 @@ const tabs = [
               id="current-tab"
               name="current-tab"
               className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-              defaultValue={tabs.find((tab) => tab.current).name}
+              defaultValue={tabs.find((tab) => tab.current)?.name ?? ''}
               onChange={(e) => handleTabChange(tabs.find((tab) => tab.name === e.target.value))}
             >
               {tabs.map((tab) => (
