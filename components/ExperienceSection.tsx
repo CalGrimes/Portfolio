@@ -12,17 +12,15 @@ import TagNoLink from "./TagNoLink";
 const ExperienceSection = () => {
   return (
     <section id="experience" className="max-w-3xl md:max-w-5xl mx-auto">
-        <div className="my-12 pb-12 md:pt-16 md:pb-24 justify-around">
-            <h1 className="my-10 text-center font-bold text-4xl">
+        <div className=" justify-around">
+            <h1 className="my-10 text-left font-bold text-4xl">
                 Experience
-                <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded dark:bg-amber-400 bg-purple-800`} />
             </h1>
 
       <div className="flex flex-col space-y-28">
         {experience.map((experience, idx) => {
           return (
             <div key={idx}>
-              <SlideUp offset="-300px 0px -300px 0px">
                 <div className="flex flex-col animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
                   <div className="md:my-auto md:pb-10">
                     <Link href={experience.link}>
@@ -45,7 +43,6 @@ const ExperienceSection = () => {
                     </div>
                   </div>
                 </div>
-              </SlideUp>
             </div>
           )
         })}
