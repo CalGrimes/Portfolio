@@ -1,6 +1,6 @@
 "use client" // this is a client component
 import React from "react"
-import { useState, useEffect } from "react";
+import { useState, } from "react";
 import  Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"

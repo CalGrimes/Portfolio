@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "MSc Artificial Intelligence (Machine Learning",
+    "grade": "Merit",
+    "image": "/ljmu.jpg",
+    "tech": ["Deep Learning", "Machine Learning", "MLOps", "Semantic Analysis", "EDAs"]
+  },
+  {
+    "id": 2,
+    "title": "BSc Software Engineering",
+    "grade": "1st Class Honours",
+    "image": "/ljmu.jpg",
+    "tech": ["Java", "SQL"]
+  }
+]

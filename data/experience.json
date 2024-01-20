@@ -19,8 +19,8 @@
         "content": "Maintanance, bug fixes and new features for a risk management system for ports around the UK using .NET and SQL Server."
       }
     ],
-    "image": "/vldbsolutions.png",
-    "tech": ["Java", "Python", "Rest", "SQL", "AWS", "Azure", ".NET"],
+    "image": "/VLDB.svg",
+    "tech": ["Azure", "Java", "Python", "SQL", "AWS", ".NET"],
     "link": "https://vldbsolutions.com/"
   }
 ]

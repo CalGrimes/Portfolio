@@ -17,8 +17,8 @@ const SkillsSection = () => {
     const allSkills = [...skills, ...skills];
 
   return (
-    <section id="skills" className='sm:max-w-4xl md:w-auto mt-12 w-screen'>
-        <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
+    <section id="skills" className='md:max-w-4xl sm:max-w-2xl lg:w-auto mt-12 w-screen'>
+        <h1 className="text-center text-2xl font-bold mb-6 lg:text-left">
             Technologies
         </h1>
       <div className="marquee bg-gray-200 dark:bg-stone-800 rounded-xl">

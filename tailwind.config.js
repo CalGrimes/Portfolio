@@ -54,5 +54,6 @@ module.exports = {
   },
   plugins: [
     nextui(),
-    require('@tailwindcss/typography')]
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms')]
 }

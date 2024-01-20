@@ -20,12 +20,12 @@ const NAV_ITEMS: Array<NavItem> = [
     page: "home",
   },
   {
-    label: "About",
-    page: "about",
+    label: "Resume",
+    page: "section-headers",
   },
   {
-    label: "Projects",
-    page: "projects",
+    label: "About",
+    page: "about",
   },
   {
     label: "Contact",
