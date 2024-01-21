@@ -39,7 +39,7 @@ const tabs = [
             <select
               id="current-tab"
               name="current-tab"
-              className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm text-black"
               defaultValue={tabs.find((tab) => tab.current)?.name ?? ''}
               onChange={(e) => handleTabChange(tabs.find((tab) => tab.name === e.target.value))}
             >
