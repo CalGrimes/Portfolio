@@ -17,12 +17,12 @@ const SkillsSection = () => {
     const allSkills = [...skills, ...skills];
 
   return (
-    <section id="skills" className='md:max-w-4xl sm:max-w-2xl lg:w-auto mt-12 w-screen'>
+    <section id="skills" className='md:max-w-4xl mt-12 w-screen'>
         <h1 className="text-center text-2xl font-bold mb-6 lg:text-left">
             Technologies
         </h1>
       <div className="marquee bg-gray-200 dark:bg-stone-800 rounded-xl">
-        <div className="marquee-content space-x-4 py-2">
+        <div className="marquee-content space-x-4 py-2 ">
           {allSkills.map((skill, index) => (
             <div key={index} id={skill} className='shadow-xl rounded-xl bg-white dark:bg-stone-900 py-2'>
                 <Tooltip label={skill} placement="top" aria-label='tooltip' className='dark:bg-amber-400 dark:text-black text-white font-semibold bg-purple-800 p-2 rounded-md'>
