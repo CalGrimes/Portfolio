@@ -9,7 +9,7 @@ import TagNoLink from "@/components/TagNoLink";
 const ExperienceSection = () => {
   return (
     <section id="experience" className="max-w-3xl md:max-w-5xl mx-auto">
-        <div className=" justify-around">
+        <div className="justify-around">
             <h1 className="my-10 text-left font-bold text-4xl">
                 Experience
             </h1>
@@ -19,14 +19,14 @@ const ExperienceSection = () => {
           return (
             <div key={idx}>
                 <div className="flex flex-col animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
-                  <div className="md:my-auto md:pb-10">
+                  <div className="md:my-auto md:pb-10 ">
                     <Link href={experience.link}>
                       <Image
                         src={experience.image}
                         alt=""
                         width={500}
                         height={500}
-                        className="rounded-xl shadow-xl hover:opacity-70 experience"
+                        className="rounded-xl shadow-xl dark:shadow-none hover:opacity-70 experience"
                       />
                     </Link>
                   </div>

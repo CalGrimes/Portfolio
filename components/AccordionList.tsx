@@ -21,11 +21,11 @@ import {
 
 export const AccordionList = ({ items }: AccordionListProps) => {
     return (
-         <Accordion allowToggle className={`rounded-xl  p-2 shadow-xl`}>
+         <Accordion allowToggle className={`rounded-xl  p-2 shadow-xl dark:shadow-none`}>
             {items.map((item, index) => (
                 <AccordionItem key={index}>
                     <h2>
-                    <AccordionButton className='sm:hover:scale-100 hover:scale-x-105 ease-in duration-75'>
+                    <AccordionButton className='md:hover:scale-105  ease-in duration-75'>
                             <Box as="span" flex='1' textAlign='left' fontWeight='bold' className='p-2'>
                                 <p className='px-2 inline-block'>{item.title}</p>
                             </Box>

@@ -1,8 +1,12 @@
-"use client"
 import "@/styles/globals.css"
 import Navbar from "@/components/NavbarBlog"
 import Footer from "@/components/Footer"
 import { Providers } from "@/app/providers"
+
+export const metadata = {
+  title: 'Cal Grimes - Blog',
+  description: 'Cal Grimes\'s blog',
+}
 
 export default function RootLayout({
   children,

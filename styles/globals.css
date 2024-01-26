@@ -317,3 +317,8 @@
   height: 100px;
   margin: 0 10px;
 }
+
+
+code {
+  @apply w-full;
+}

@@ -1,32 +1,28 @@
-import Posts from "@/components/Posts";
-import { getSortedPostsData } from "@/lib/posts"
+import Articles from "@/components/Articles";
 
+const BlogArticles = () => {
 
-// blog/page.tsx
-// export async function getStaticProps() {
-//   const posts = getSortedPostsData();
-
-//   return {
-//     props: {
-//       posts
-//     },
-//   };
-// }
-
-export default function BlogPostings() {
-  const posts = getSortedPostsData()
   return (
-    <main className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-      {/* section */}
-      <section>
-        <div className="flex flex-col animate-fadeIn animation-delay-2 my-10 pt-16 sm:pt-16 sm:pb-10 md:pt-16 md:pb-6 md:flex-row md:space-x-4 md:text-left">
+    <div className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">Blog Postings</h2>
+          <p className="mt-2 text-lg leading-8 text-gray-600 dark:text-gray-400">
+            Thank you for visiting my blog. I hope you find the information useful.
+          </p>
         </div>
-        <h1 className="text-3xl font-bold mb-4">Blog Postings</h1>
-      </section>
-      
-      <Posts posts={posts} />
-    </main>
+        <Articles />
+      </div>
+    </div>
   )
 }
+
+export default async function Page({params}:any) {
+  return (
+      <BlogArticles />
+  )
+}
+
+
 
 

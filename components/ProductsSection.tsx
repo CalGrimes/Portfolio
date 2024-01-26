@@ -68,7 +68,7 @@ const Products = () => {
                           {post.date}
                         </time> */}
                         <span
-                          className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 transition-colors duration-200 ease-in-out cursor-default"
+                          className="relative z-10 rounded-full bg-gray-50 py-1.5 font-medium text-gray-600 hover:bg-gray-100 transition-colors duration-200 ease-in-out cursor-default leading-6"
                         >
                           {post.category.title}
                         </span>
