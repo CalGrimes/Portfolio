@@ -4,8 +4,18 @@ import { useEffect, useState } from 'react';
 import { Spinner } from '@chakra-ui/react'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
-export function Author ({author}) {
-  const [authorDetails, setAuthorDetails] = useState(null);
+
+interface AuthorDetails {
+    data: {
+      photo: string;
+      fullName: string;
+    };
+  }
+  
+  // Then, you should define authorDetails with the type of AuthorDetails
+
+export function Author ({author}:any) {
+  const [authorDetails, setAuthorDetails] = useState<AuthorDetails | null>(null);
 
   useEffect(() => {
     const fetchAuthorDetails = async () => {
@@ -23,6 +33,7 @@ export function Author ({author}) {
   if (!authorDetails) {
     return <div className='mt-8'><Spinner size="xl" style={{ width: '25px', height: '25px' }} /></div>;
   }
+  
 
   return (
     <>
