@@ -1,4 +1,4 @@
-import { CopyBlock } from "react-code-blocks"; 
+import { CopyBlock, atomOneDark } from "react-code-blocks"; 
 
 const CodeBlock = (props: any) => {
     return (
@@ -11,7 +11,7 @@ const CodeBlock = (props: any) => {
                 showLineNumbers={props.showLineNumbers}
                 codeBlock={props.codeBlock}
                 wrapLines={true}
-                theme='atom-one-dark'
+                theme={atomOneDark}
             />
         </div>
     )
