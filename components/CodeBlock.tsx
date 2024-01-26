@@ -9,7 +9,6 @@ const CodeBlock = (props: any) => {
                 language={props.language}
                 showLineNumbers={props.showLineNumbers}
                 codeBlock={props.codeBlock}
-                wrapLines={true}
                 theme={atomOneDark}
             />
         </div>
