@@ -11,7 +11,7 @@ const CodeBlock = (props: any) => {
                 showLineNumbers={props.showLineNumbers}
                 codeBlock={props.codeBlock}
                 wrapLines={true}
-                theme="material"
+                theme='atom-one-dark'
             />
         </div>
     )
