@@ -1,8 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
-}
+const withBuilderDevTools = require("@builder.io/dev-tools/next")();
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = withBuilderDevTools({
+  images: {
+    domains: ['cdn.builder.io', 'i0.wp.com'],
+    formats: ['image/avif', 'image/webp'],
+    dangerouslyAllowSVG: true,
+  },
+});
+
+module.exports = nextConfig;

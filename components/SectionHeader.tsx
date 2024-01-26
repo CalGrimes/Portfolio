@@ -30,7 +30,7 @@ const tabs = [
 
     return (
       <section id="section-headers" className="max-w-full">
-      <div className="border-b border-gray-200 pb-5 sm:pb-24 mt-12">
+      <div className="border-b border-gray-400 dark:border-gray-600 pb-5 sm:pb-24 mt-12">
         <div className="mt-3 sm:mt-4">
           <div className="sm:hidden">
             <label htmlFor="current-tab" className="sr-only">
