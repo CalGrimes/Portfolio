@@ -5,7 +5,6 @@ const CodeBlock = (props: any) => {
         <div style={{ overflowX: 'auto' }}>
             <p>{props.language}</p>
             <CopyBlock
-                className='rounded-xl p-2 shadow-xl dark:shadow-none code' 
                 text={props.text}
                 language={props.language}
                 showLineNumbers={props.showLineNumbers}
