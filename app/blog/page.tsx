@@ -1,12 +1,6 @@
 import Articles from "@/components/Articles";
 
-export default async function Page({params}) {
-  return (
-      <BlogArticles />
-  )
-}
-
-export const BlogArticles = () => {
+const BlogArticles = () => {
 
   return (
     <div className="py-24 sm:py-32">
@@ -22,5 +16,13 @@ export const BlogArticles = () => {
     </div>
   )
 }
+
+export default async function Page({params}) {
+  return (
+      <BlogArticles />
+  )
+}
+
+
 
 
