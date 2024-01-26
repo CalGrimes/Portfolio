@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: any) {
   }
 }
 
-export default async function Page({params}) {
+export default async function Page({params}:any) {
 
   const content = await builder
     .get("blog-article", {
