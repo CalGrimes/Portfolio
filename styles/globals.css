@@ -322,3 +322,7 @@
 code {
   @apply w-full;
 }
+
+.dark-blog {
+  @apply dark:text-black;
+}
