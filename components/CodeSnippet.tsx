@@ -4,6 +4,13 @@ import { useTheme } from "next-themes";
 const CodeSnippet = (props: any) => {
     const { systemTheme, theme, setTheme } = useTheme();
 
+    let themeToUse;
+    if (theme === "system") {
+        themeToUse = systemTheme === "dark" ? atomOneDark : atomOneLight;
+    } else {
+        themeToUse = theme === "dark" ? atomOneDark : atomOneLight;
+    }
+
     return (
         <div style={{ overflowX: 'auto' }}>
             <p>{props.language}</p>
@@ -12,7 +19,7 @@ const CodeSnippet = (props: any) => {
                 language={props.language}
                 showLineNumbers={props.showLineNumbers}
                 codeBlock={props.codeBlock}
-                theme={theme === "system" ? systemTheme : theme === "dark" ? atomOneDark : atomOneLight}
+                theme={themeToUse}
             />
         </div>
     )
