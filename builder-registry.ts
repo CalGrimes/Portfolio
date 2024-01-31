@@ -13,10 +13,10 @@ Builder.registerComponent(Counter, {
 });
 
 
-import CodeBlock from "@/components/CodeBlock";
+import CodeSnippet from "@/components/CodeSnippet";
 
-Builder.registerComponent(CodeBlock, {
-  name: "CodeBlock",
+Builder.registerComponent(CodeSnippet, {
+  name: "CodeSnippet",
   inputs: [
     {
       name: "text",
