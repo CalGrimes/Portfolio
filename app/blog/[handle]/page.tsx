@@ -10,45 +10,43 @@ builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
 export async function generateMetadata({ params }: any) {
   const content = await builder
-    .get("blog-article", {
+  .get("blog-article", {
+    // Include references, like our `author` ref
+    options: { includeRefs: true },
+    query: {
+      // Get the specific article by handle
+      "data.handle": params.handle,
+    },
+    cacheSeconds: 5,
+    prerender: false
+  })
+  .promise() || null;
 
-      userAttributes: {
-        // Pass the current user attributes
-        urlPath: `/blog/${params?.handle}`,
-      },
-      cacheSeconds: 5,
-      // Set prerender to false to prevent infinite rendering loops
-      prerender: false,
-
-    })
-    .toPromise();
 
   return {
-    title: content.data.title,
-    description: content.data.excerpt,
+    // title: content.data.title,
+    // description: content.data.excerpt,
   }
 }
 
 export default async function Page({params}:any) {
 
   const content = await builder
-    .get("blog-article", {
-
-      userAttributes: {
-        // Pass the current user attributes
-        urlPath: `/blog/${params?.handle}`,
-      },
-      cacheSeconds: 5,
-      // Set prerender to false to prevent infinite rendering loops
-      prerender: false,
-
-    })
-    .toPromise();
+  .get("blog-article", {
+    // Include references, like our `author` ref
+    options: { includeRefs: true },
+    query: {
+      // Get the specific article by handle
+      "data.handle": params.handle,
+    },
+    cacheSeconds: 5,
+    prerender: false
+  })
+  .promise() || null;
 
 
   return (
     <div className="pt-24 h-full">
-      {/* Render the Builder page */}
       <RenderBuilderContent content={content} key={content.id}  />
     </div>
   );
