@@ -79,7 +79,12 @@ const Products = () => {
                   </div>
                   <div className=" flex border-t border-gray-900/5 pt-6">
                     <div className="relative flex items-center gap-x-4 mb-6">
-                      <Image src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+                      <Image
+                      src={post.author.imageUrl} 
+                      alt="" 
+                      width={40}
+                      height={40}
+                      className="h-10 w-10 rounded-full bg-gray-50" />
                       <div className="text-sm leading-6">
                         <p className="font-semibold text-gray-900 dark:text-gray-100">
                           <a href={post.author.href}>
