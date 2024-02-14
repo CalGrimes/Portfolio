@@ -82,10 +82,11 @@ export default function BlogArticles() {
             Thank you for visiting my blog. I hope you find the information useful.
           </p>
         </div>
+        <Input placeholder="Search articles" className='rounded-lg text-black' onChange={e => setSearchQuery(e.target.value)} />
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         {Array.from({ length: 5 }).map((_, index) => (
             <article key={index} className="flex flex-col items-start justify-between bg-gray-200 dark:bg-stone-800/70">
-              <Skeleton height="20px" fadeDuration={4} width="100%" />
+              <Skeleton height="60px" fadeDuration={4} width="100%" />
               <Skeleton height="20px" fadeDuration={4} width="80%" />
               <Skeleton height="20px" fadeDuration={4} width="60%" />
             </article>
@@ -105,7 +106,7 @@ export default function BlogArticles() {
             Thank you for visiting my blog. I hope you find the information useful.
           </p>
         </div>
-    <Input placeholder="Search articles" className='rounded-lg' onChange={e => setSearchQuery(e.target.value)} />
+    <Input placeholder="Search articles" className='rounded-lg text-black' onChange={e => setSearchQuery(e.target.value)} />
     <div className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
     {content && content.map((post: any) => {
       return (
