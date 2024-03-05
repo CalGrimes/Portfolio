@@ -44,6 +44,10 @@ export default async function Page({params}:any) {
   })
   .promise() || null;
 
+  if (!content) {
+    return <div>Not found</div>
+  }
+
 
   return (
     <div className="pt-24 h-full">

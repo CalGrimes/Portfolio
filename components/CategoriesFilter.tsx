@@ -4,9 +4,24 @@ import React, { useEffect, useState } from 'react'
 
 
   builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
-
-export default function CategoriesFilter({onFilter, ARTICLES_PER_PAGE, currentPage, onCategory}: {onFilter: any, ARTICLES_PER_PAGE: number, currentPage: number, onCategory: any}) {
-    const [categories, setCategories] = useState<BuilderContent[]>([]);
+  interface CategoryContent extends BuilderContent<any> {
+    data: {
+      category: string;
+      variationId: any;
+      testVariationId: any;
+      testVariationName: string;
+      '@version'?: number;
+      id?: string;
+      name?: string;
+      published?: "published" | "draft" | "archived";
+      // include other 7 properties
+      testRatio?: number;
+    };
+  }
+  
+  // Then use this new type in your component
+  export default function CategoriesFilter({onFilter, ARTICLES_PER_PAGE, currentPage, onCategory}: {onFilter: any, ARTICLES_PER_PAGE: number, currentPage: number, onCategory: any}) {
+      const [categories, setCategories] = useState<CategoryContent[]>([]);
     const [category, setCategory] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -67,45 +82,6 @@ export default function CategoriesFilter({onFilter, ARTICLES_PER_PAGE, currentPa
         fetchCategories();
     }, []);
 
-    // useEffect(() => {
-    //     const fetchContent = async () => {
-    //       const internalData = await builder.getAll(
-    //         "blog-article",
-    //         {
-    //             options: {
-    //               includeUnpublished: process.env.NEXT_PUBLIC_ENVIRONMENT == 'development' ? true : false,
-    //               includeRefs: true
-    //             },
-    //             query: category ? { 'data.category': category } : {},
-    //             omit: "data.blocks",
-    //             limit: ARTICLES_PER_PAGE,
-    //             cacheSeconds: 5,
-    //             offset: (currentPage - 1) * ARTICLES_PER_PAGE,
-    //             prerender: false
-    //         }
-    //     );
-    //     const externalData = await builder.getAll(
-    //       "external-articles",
-    //       {
-    //         options: {
-    //           includeUnpublished: process.env.NEXT_PUBLIC_ENVIRONMENT == 'development' ? true : false,
-    //           includeRefs: true
-    //         },
-    //         query: category ? { 'data.category': category } : {},
-    //         omit: "data.blocks",
-    //         limit: ARTICLES_PER_PAGE,
-    //         cacheSeconds: 5,
-    //         offset: (currentPage - 1) * ARTICLES_PER_PAGE,
-    //         prerender: false
-    //       }
-    //   );
-    
-    //     onFilter([...internalData, ...externalData]);
-    //     setLoading(false);
-    //     }
-    
-    //   fetchContent();
-    //   }, [ARTICLES_PER_PAGE, category, currentPage, onFilter]);
 
     if (loading) {
         return <div>Loading...</div>
@@ -121,7 +97,7 @@ export default function CategoriesFilter({onFilter, ARTICLES_PER_PAGE, currentPa
             }}
         >
             <option value=''>All Categories</option>
-            {categories.map((icategory: BuilderContent<any>, index) => (
+            {categories.map((icategory: CategoryContent, index) => (
                 <option key={index} value={icategory.data?.category}>
                     {icategory.data?.category}
                 </option>
