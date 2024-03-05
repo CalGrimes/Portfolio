@@ -42,7 +42,12 @@ export function Author ({author}:any) {
   return (
     <>
       <div className="relative mt-4 flex items-center gap-x-4">
-        <Image src={authorDetails.data.photo} alt="" className="h-10 w-10 rounded-full bg-gray-100" />
+        <Image
+        src={authorDetails.data.photo}
+        alt="" 
+        width={40}
+        height={40}
+        className="h-10 w-10 rounded-full bg-gray-100" />
         <div className="text-sm leading-6">
           <p className="font-semibold text-gray-900 dark:text-gray-100">
             <a href={authorDetails.data.photo}>
