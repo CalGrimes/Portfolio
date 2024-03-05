@@ -53,6 +53,11 @@ const formatDate = (date: string) => {
               )}
           </div>
         </div>
+        <div className="flex flex-wrap  gap-y-1 overflow-hidden text-sm leading-6 text-gray-300 ">
+          <span className="text-xs font-semibold text-white bg-gray-800 rounded-full px-3 py-1">
+            {post.data.category}
+          </span>
+        </div>
         <div className="mt-3 text-lg font-semibold leading-6 text-white">
           <a href={post.data.url}>
             <span className="absolute inset-0" />
