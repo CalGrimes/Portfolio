@@ -1,3 +1,4 @@
+import { isDevelopment } from '@/utils/config';
 import { BuilderContent } from '@builder.io/react';
 import { builder } from '@builder.io/sdk';
 import React, { useEffect, useState } from 'react'
@@ -30,7 +31,7 @@ import React, { useEffect, useState } from 'react'
             const categoriesExternal = await builder.getAll(
                 'external-articles', {
                     options: {
-                        includeUnpublished: process.env.NEXT_PUBLIC_ENVIRONMENT == 'development' ? true : false,
+                        includeUnpublished: isDevelopment,
                         includeRefs: true
                     },
                     fields: 'data.category',
