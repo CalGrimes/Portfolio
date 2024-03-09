@@ -61,7 +61,7 @@ const ThreeCards = ( {projects}: any ) => {
     // Only first entry
     const project = projects[0]
     return (
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-screen-2xl px-6 lg:px-8">
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
               <article key={project.id} className="flex flex-col items-start justify-between  rounded-xl shadow-2xl dark:bg-stone-800/70 dark:shadow-md ">
                 <div className="relative w-full">
@@ -80,7 +80,7 @@ const ThreeCards = ( {projects}: any ) => {
                 <div className="px-2 w-full">
                 <div className="relative flex flex-row justify-between w-full mt-3">
                   <div className="group">
-                    <h3 className="text-lg font-bold leading-6 text-gray-900 dark:text-gray-200 group-hover:text-gray-600 dark:group-hover:text-gray-400">
+                    <h3 className="text-2xl font-bold leading-6 text-gray-900 dark:text-gray-200 group-hover:text-gray-600 dark:group-hover:text-gray-400">
                       <a href={project.link}>
                         <span className="absolute inset-0" />
                         {project.name}
