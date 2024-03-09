@@ -14,29 +14,6 @@ builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 const ARTICLES_PER_PAGE = 30;
 
 const getTotalArticles = async (category: string | null, searchQuery: string) => {
-  const totalInternalArticles = await builder.getAll(
-    "blog-article",
-    {
-        options: {
-          includeUnpublished: process.env.NEXT_PUBLIC_ENVIRONMENT == 'development' ? true : false,
-          includeRefs: true
-        },
-        fields: "data.category",
-        query: { 
-          $and: [
-            category ? { 'data.category': category } : {},
-            {
-              $or: [
-                { 'data.title': { $regex: searchQuery, $options: 'i' } },
-                { 'data.excerpt': { $regex: searchQuery, $options: 'i' } }
-              ]
-            }
-          ]
-        },
-        cacheSeconds: 5,
-        prerender: false
-    }
-  ).then((res) => { return res.length });
   const totalExternalArticles = await builder.getAll(
     "external-articles",
     {
@@ -64,7 +41,7 @@ const getTotalArticles = async (category: string | null, searchQuery: string) =>
 
 
   // round up to the nearest whole number
-  const total = Math.ceil((totalInternalArticles + totalExternalArticles) / ARTICLES_PER_PAGE);
+  const total = Math.ceil(totalExternalArticles / ARTICLES_PER_PAGE);
 
   return total;
 }
@@ -93,73 +70,33 @@ export default function Page({params}:any) {
     fetchTotalPages();
   }, [categories, category, searchQuery]);
 
-  const setCurrentPageAndCategory = (page: number, category: string | null) => {
-    setCurrentPage(page);
-    setCategory(category);
-  };
-
 
   // Push states to the URL
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     searchParams.set('page', currentPage.toString());
 
-    if (!category) {
-      searchParams.delete('category');
-    }
-    else
-    {
-      searchParams.set('category', category);
-    }
+    category ? searchParams.set('category', category) : searchParams.delete('category');
+    searchQuery ? searchParams.set('search', searchQuery) : searchParams.delete('search');
 
     window.history.pushState({}, '', `${window.location.pathname}?${searchParams.toString()}`);
-  }, [category, currentPage]);
+  }, [category, currentPage, searchQuery]);
 
   // Fetch url search params to update states
   useEffect(() => {
     const page = searchParams?.get('page');
     const category = searchParams?.get('category');
+    const search = searchParams?.get('search');
 
-    if (page && category) {
-      setCurrentPageAndCategory(parseInt(page), category);
-    }
-    else if (page) {
-      setCurrentPage(parseInt(page));
-    }
-    else if (category) {
-      setCategory(category);
-    }
-  }
-  , [searchParams]);
+    page && setCurrentPage(parseInt(page));
+    category && setCategory(category);
+    search && setSearchQuery(search);
+
+  }, [searchParams]);
     
 
   useEffect(() => {
     const fetchContent = async () => {
-      const internalData = await builder.getAll(
-        "blog-article",
-        {
-            options: {
-              includeUnpublished: process.env.NEXT_PUBLIC_ENVIRONMENT == 'development' ? true : false,
-              includeRefs: true
-            },
-            omit: "data.blocks",
-            query: { 
-              $and: [
-                category ? { 'data.category': category } : {},
-                {
-                  $or: [
-                    { 'data.title': { $regex: searchQuery, $options: 'i' } },
-                    { 'data.excerpt': { $regex: searchQuery, $options: 'i' } }
-                  ]
-                }
-              ]
-            },
-            limit: ARTICLES_PER_PAGE,
-            cacheSeconds: 5,
-            offset: (currentPage - 1) * ARTICLES_PER_PAGE,
-            prerender: false
-        }
-    );
     const externalData = await builder.getAll(
       "external-articles",
       {
@@ -186,7 +123,7 @@ export default function Page({params}:any) {
       }
   );
 
-    setContent([...internalData, ...externalData]);
+    setContent([...externalData]);
     setLoading(false);
     }
 
@@ -226,8 +163,8 @@ export default function Page({params}:any) {
             </p>
         </div>
         <div className="flex space-x-4">
-          <SearchArticles ARTICLES_PER_PAGE={ARTICLES_PER_PAGE} onSearch={setContent} onQuery={setSearchQuery} currentPage={currentPage} />
-          <CategoriesFilter onFilter={setContent} ARTICLES_PER_PAGE={ARTICLES_PER_PAGE} currentPage={currentPage} onCategory={setCategory} />
+          <SearchArticles onQuery={setSearchQuery} />
+          <CategoriesFilter onFilter={setCategory} />
         </div>
         <Articles articles={content} />
         <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
