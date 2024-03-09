@@ -102,9 +102,8 @@ export default function Page({params}:any) {
       {
         options: {
           includeUnpublished: process.env.NEXT_PUBLIC_ENVIRONMENT == 'development' ? true : false,
-          includeRefs: true
+          includeRefs: true,
         },
-        omit: "data.blocks",
         query: { 
           $and: [
             category ? { 'data.category': category } : {},
@@ -141,6 +140,9 @@ export default function Page({params}:any) {
           </div>
         <div className="mt-20 flex space-x-4">
           <Input placeholder="Search articles" className='rounded-lg text-black' />
+          <select className='rounded-md text-black'>
+              <option value=''>All Categories</option>
+          </select>
         </div>
         <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 5 }).map((_, index) => (
@@ -155,18 +157,29 @@ export default function Page({params}:any) {
     )
   }
   return (
-      <div className="container mx-auto px-4 pt-32 space-y-12">
+      <div className="container mx-auto px-4 pt-16 space-y-12">
+        <div className="min-h-screen">
         <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">Blog Postings</h2>
             <p className="mt-2 text-lg leading-8 text-gray-600 dark:text-gray-400">
               Thank you for visiting my blog. I hope you find the information useful.
             </p>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 mt-20">
           <SearchArticles onQuery={setSearchQuery} />
           <CategoriesFilter onFilter={setCategory} />
         </div>
         <Articles articles={content} />
+        {content.length === 0 && (
+          <div className="flex items-center justify-center h-screen">
+          <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">No articles found</h2>
+              <p className="mt-2 text-lg leading-8 text-gray-600 dark:text-gray-400">
+                  We couldn&apos;t find any articles matching your search.
+              </p>
+          </div>
+      </div>)}
+        </div>
         <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
 
       </div>
