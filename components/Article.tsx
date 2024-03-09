@@ -29,7 +29,7 @@ const formatDate = (date: string) => {
         key={post.data.id}
         className="relative isolate flex flex-col overflow-hidden rounded-2xl bg-gray-900 p-8 group h-96"
       >
-        <img src={post.data.thumbnail} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
+        <Image src={post.data.thumbnail} alt="" layout="fill" objectFit="cover" className="absolute inset-0 -z-10" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
         <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
   
@@ -45,7 +45,7 @@ const formatDate = (date: string) => {
             </svg>
             <div className="flex gap-x-2.5">
                 <>
-                  <img src={post.data.author?.value.data.photo} alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
+                  <Image src={post.data.author?.value.data.photo} alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
                   {post.data.author?.value.data.fullName}
                 </>
             </div>
