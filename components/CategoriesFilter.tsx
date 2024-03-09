@@ -20,7 +20,7 @@ import React, { useEffect, useState } from 'react'
   }
   
   // Then use this new type in your component
-  export default function CategoriesFilter({onFilter, ARTICLES_PER_PAGE, currentPage, onCategory}: {onFilter: any, ARTICLES_PER_PAGE: number, currentPage: number, onCategory: any}) {
+  export default function CategoriesFilter({onFilter}: {onFilter: any}) {
       const [categories, setCategories] = useState<CategoryContent[]>([]);
     const [category, setCategory] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
@@ -93,7 +93,7 @@ import React, { useEffect, useState } from 'react'
             value={category || ''} 
             onChange={(e) => {
                 setCategory(e.target.value)
-                onCategory(e.target.value)
+                onFilter(e.target.value)
             }}
         >
             <option value=''>All Categories</option>
