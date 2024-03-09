@@ -11,7 +11,7 @@ import { Input, Skeleton } from "@chakra-ui/react";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
-export const ARTICLES_PER_PAGE = 30;
+const ARTICLES_PER_PAGE = 30;
 
 async function getTotalArticles(category: string | null, searchQuery: string) {
   const totalExternalArticles = await builder.getAll(
