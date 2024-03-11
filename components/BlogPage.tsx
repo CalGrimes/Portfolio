@@ -120,7 +120,7 @@ export default function BlogPage({params}:any) {
               Thank you for visiting my blog. I hope you find the information useful.
             </p>
         </div>
-        <div className="flex space-x-4 mt-20">
+        <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 mt-20">
           <SearchArticles onQuery={setSearchQuery} />
           <CategoriesFilter onFilter={setCategory} />
         </div>
