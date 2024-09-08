@@ -9,7 +9,7 @@ import SkillsSection from "@/components/SkillsSection"
 const HeroSection: React.FC = () => {
 
 return (
-    <section id="home" className="max-w-full">
+    <section id="home" className="max-w-full overflow-hidden">
       <div className="flex flex-col lg:flex-row text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 pt-16 sm:pt-16 sm:pb-10 lg:pt-16 lg:pb-6 lg:space-x-4 lg:text-left gap-12 lg:gap-24">
         <div className="lg:mt-2 flex-shrink-0">
           <Image
