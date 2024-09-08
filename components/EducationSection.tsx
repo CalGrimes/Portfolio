@@ -25,7 +25,7 @@ const EducationSection = () => {
                         alt=""
                         width={500}
                         height={500}
-                        className="rounded-xl shadow-xl  dark:shadow-none hover:opacity-70 education"
+                        className="rounded-xl shadow-xl dark:shadow-none hover:scale-105 ease-in duration-75 education"
                       />
                   </div>
                   <div className="mt-8 md:w-1/2">
