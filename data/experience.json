@@ -1,5 +1,14 @@
 [
   {
+    "name": "ITV",
+    "title": "Technical Integration Analyst",
+    "image": "/ITV.svg",
+    "background": "itvgreen",
+    "description":[],
+    "tech": ["Oracle", "EBS", "ETL", "Salesforce", "REST", "SOAP", "Data Engineering", "Solution Architecture"],
+    "link": "https://www.itv.com/"
+  },
+  {
     "name": "VLDB Solutions",
     "title": "Software Developer",
     "description":

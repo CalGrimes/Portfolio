@@ -19,20 +19,20 @@ const ExperienceSection = () => {
           return (
             <div key={idx}>
                 <div className="flex flex-col animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
-                  <div className="md:my-auto md:pb-10 ">
+                  <div className="md:my-auto md:pb-10">
                     <Link href={experience.link}>
                       <Image
                         src={experience.image}
                         alt=""
                         width={500}
                         height={500}
-                        className="rounded-xl shadow-xl dark:shadow-none hover:opacity-70 experience"
+                        className={`${experience.background? `bg-${experience.background} ` : ""}` + `rounded-xl shadow-xl dark:shadow-none hover:scale-105 ease-in duration-75 experience px-4`}
                       />
                     </Link>
                   </div>
                   <div className="mt-8 md:w-1/2">
                     <h1 className="text-4xl font-bold mb-6">{experience.name}</h1>
-                    <AccordionList items={experience.description} />
+                    {experience.description.length > 0 && <AccordionList items={experience.description} />}
                     <div className="flex flex-auto align-bottom flex-wrap mt-4">
                         {experience.tech.map((tech,idx2) => (
                                 <TagNoLink key={idx2} tag={tech} />
