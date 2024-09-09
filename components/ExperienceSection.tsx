@@ -34,7 +34,7 @@ const ExperienceSection = () => {
                   </div>
                   <div className="mt-8 md:w-1/2">
                     <h1 className="text-4xl font-bold mb-6">{experience.name}</h1>
-                    {experience.description.length > 0 && <AccordionList items={experience.description} />}
+                    {/* {experience.description.length > 0 && <AccordionList items={experience.description} />} */}
                     <div className="flex flex-auto align-bottom flex-wrap mt-4">
                         {experience.tech.map((tech,idx2) => (
                                 <TagNoLink key={idx2} tag={tech} />
