@@ -8,7 +8,7 @@ import Resume from "@/components/Resume";
 
 const tabs = [
     { name: 'Resume', href: '#', current: true },
-    { name: 'Products', href: '#', current: false },
+    // { name: 'Products', href: '#', current: false },
     { name: 'Projects', href: '#', current: false },
   ]
   
@@ -72,11 +72,11 @@ const tabs = [
             <Resume />
           </SlideUp>
         </div>
-        {/* <div id="Products" className={classNames(currentTab === 'Products' ? 'block' : 'hidden', 'mt-3')}>
+        <div id="Products" className={classNames(currentTab === 'Products' ? 'block' : 'hidden', 'mt-3')}>
           <SlideUp>
             <ProductsSection />
           </SlideUp>
-        </div> */}
+        </div>
         <div id="Projects" className={classNames(currentTab === 'Projects' ? 'block' : 'hidden', 'mt-3')}>
           <SlideUp>
             <ProjectsSection />
