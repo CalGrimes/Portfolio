@@ -25,7 +25,7 @@ const Certifications = () => {
 
   return (
             <div className = "mt-12">
-                <h1 className="text-center text-2xl font-bold mb-6 md:text-left w-full">
+                <h1 className="text-center text-2xl font-bold mb-6 lg:text-left">
                     Certifications
                 </h1>
             <div className="flex flex-row  overflow-x-scroll sm:overflow-hidden">
