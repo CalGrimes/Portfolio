@@ -11,6 +11,7 @@ const EducationSection = () => {
         <div className=" justify-around">
             <h1 className="my-10 text-left font-bold text-4xl">
                 Education
+                <hr className="border-2 border-purple-800 dark:border-amber-400 mt-4 w-10 rounded-full" />
             </h1>
 
       <div className="flex flex-col space-y-12">
