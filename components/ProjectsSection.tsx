@@ -18,7 +18,7 @@ const ProjectLinks = ({project}: any) => {
         />
       </Link>
       </Tooltip>
-      <Tooltip label="Demo" aria-label='Demo Tooltip' placement="top" className="p-1 rounded bg-gray-200 dark:bg-zinc-800">
+      <Tooltip label={project.linkTooltip} aria-label='Demo Tooltip' placement="top" className="p-1 rounded bg-gray-200 dark:bg-zinc-800">
       <Link href={project.link} target="_blank">
         <BsArrowUpRightSquare
           size={30}
@@ -57,63 +57,68 @@ const Note = ({project}: any) => {
 }
 
 
-const ThreeCards = ( {projects}: any ) => {
-    // Only first entry
-    const project = projects[0]
-    return (
-        <div className="mx-auto max-w-screen-2xl px-6 lg:px-8">
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-              <article key={project.id} className="flex flex-col items-start justify-between  rounded-xl shadow-2xl dark:bg-stone-800/70 dark:shadow-md ">
-                <div className="relative w-full">
-                    <a href={project.link} className="group">
-                    <Image
-                      src={project.image}
-                      alt=""
-                      className="aspect-[16/9] w-full rounded-tl-xl rounded-tr-xl  bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] group-hover:opacity-75 transition-opacity duration-50"
-                      width={1000}
-                      height={1000}
-                    />
-                    <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+const ThreeCards = ({ projects }: any) => {
+  return (
+    <div className="mx-auto max-w-screen-2xl px-6 lg:px-8">
+      <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        {projects.map((project: any) => (
+          <article key={project.id} className="flex flex-col items-start rounded-xl shadow-2xl dark:bg-stone-800/70 dark:shadow-md pb-20 relative">
+            {project.linkTooltip === "Live Site" ? (
+              <div className="absolute top-0 right-0 z-10 p-2 bg-stone-200 dark:bg-stone-800  rounded-tr-xl rounded-bl-xl px-4 py-1"> 
+                <span className="text-sm font-bold darK:text-white">
+                  <span className="pulse-dot"></span>&nbsp;&nbsp;&nbsp;Live
+                </span>
+              </div>
+            ) : null}
+            <div className="relative w-full">
+              <a href={project.link} className="group">
+                <Image
+                  src={project.image}
+                  alt=""
+                  className="aspect-[16/9] w-full rounded-tl-xl rounded-tr-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] group-hover:opacity-75 transition-opacity duration-50"
+                  width={1000}
+                  height={1000}
+                />
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              </a>
+            </div>
+
+            <div className="px-2 w-full">
+              <div className="relative flex flex-row justify-between w-full mt-3">
+                <div className="group">
+                  <h3 className="text-2xl font-bold leading-6 text-gray-900 dark:text-gray-200 group-hover:text-gray-600 dark:group-hover:text-gray-400">
+                    <a href={project.link}>
+                      <span className="absolute inset-0" />
+                      {project.name}
                     </a>
+                  </h3>
                 </div>
+                <div className="relative">
+                  <ProjectLinks project={project} />
+                </div>
+              </div>
+              <div>
+                <p className="mt-5 text-sm leading-6 text-gray-600 dark:text-gray-400 mb-4">
+                  {project.description}
+                </p>
+              </div>
 
-                <div className="px-2 w-full">
-                <div className="relative flex flex-row justify-between w-full mt-3">
-                  <div className="group">
-                    <h3 className="text-2xl font-bold leading-6 text-gray-900 dark:text-gray-200 group-hover:text-gray-600 dark:group-hover:text-gray-400">
-                      <a href={project.link}>
-                        <span className="absolute inset-0" />
-                        {project.name}
-                      </a>
-                    </h3>
-                  </div>
-                  <div className="relative">
-                    <ProjectLinks project={project} />
-                  </div>
-                </div>
-                <div>
-                  <p className="mt-5 text-sm leading-6 text-gray-600 dark:text-gray-400 mb-4">  {project.description}
-                  </p>
-                </div>
+              <Note project={project} />
 
-                <Note project={project} />
-
-                <div className="relative mt-8 flex items-center gap-x-4">
-                  <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start mb-4">
-                    {project.tech && Array.isArray(project.tech) && project.tech.map((tech:string, idx:number) => {
-                      return (
-                        <TagNoLink key={idx} tag={tech} />
-                      )
-                    })}
-                  </div>
+              <div className="absolute bottom-0 mt-8 flex items-center gap-x-4">
+                <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start mb-4">
+                  {project.tech && Array.isArray(project.tech) && project.tech.map((tech: string, idx: number) => (
+                    <TagNoLink key={idx} tag={tech} />
+                  ))}
                 </div>
-                </div>
-        
-              </article>
-          </div>
-        </div>
-    )
-  }
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const ProjectsSection = () => {
   return (

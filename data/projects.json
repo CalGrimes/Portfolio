@@ -8,25 +8,27 @@
     "github": "https://github.com/CalGrimes/ECommerce-HotSauce",
     "link": "https://e-commerce-hot-sauce.vercel.app/",
     "note": "Also deployed this as a static site to AWS with S3, API Gateway and Lambda.",
-    "noteLink": "http://consulting-556567.s3-website.eu-west-2.amazonaws.com/"
+    "noteLink": "http://consulting-556567.s3-website.eu-west-2.amazonaws.com/",
+    "linkTooltip": "Live Site"
   },
   {
     "id": 2,
-    "name": "Movie Manager",
-    "tech": [".NET", "Azure", "SQLite"],
-    "description":
-    "Movie Manager is a web app that allows you to add, delete, update movies to a cloud database.",
-    "image": "/moviemanager.png",
-    "github": "https://github.com/CalGrimes/MoviesAppMVC",
-    "link": "https://movieappmvc20230621183851.azurewebsites.net/"
+    "name": "Grafana Loki Logging w/Python",
+    "tech": ["Python", "Loki", "Grafana", "Docker"],
+    "description": "A medium article project that demonstrates logging from a Python application to Loki using Docker Compose. It includes services for Loki, Grafana, Minio, and a custom Python log generator.",
+    "image": "/projects-loki.png",
+    "github": "https://github.com/CalGrimes/python-log-to-loki",
+    "link": "https://medium.com/@cal.grimes/send-log-data-to-loki-from-python-22dfd0c6b45c",
+    "linkTooltip": "Medium Article"
   },
   {
     "id": 3,
-    "name": "Blog Site",
-    "description":
-    "My blog site built with Gatsby in which I gained my JAMStack Certification.",
-    "image": "/blogsite.png",
-    "github": "https://github.com/CalGrimes/CalGrimes-Blog-Postings",
-    "link": "https://pedantic-mcnulty-635da5.netlify.app/"
+    "name": "ELK Stack on AWS",
+    "tech": ["Elasticsearch", "Kibana", "Logstash", "AWS"],
+    "description": "A medium article project that demonstrates setting up an ELK stack on AWS using Ubuntu VMs. It includes services for Elasticsearch, Kibana, Logstash.",
+    "image": "/projects-elk.png",
+    "github": "https://github.com/CalGrimes/ElasticSearch-AWS-VM-Ubuntu",
+    "link": "https://medium.com/@cal.grimes/quick-start-elasticsearch-logstash-and-kibana-elk-stack-on-aws-e4a4604e9833",
+    "linkTooltip": "Medium Article"
   }
 ]
