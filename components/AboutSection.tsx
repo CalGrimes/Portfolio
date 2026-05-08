@@ -13,44 +13,38 @@ const skills = [
 ];
 
 const AboutSection = () => {
-
   return (
-    <section id="about" className="max-w-3xl md:max-w-5xl mx-auto">
-      <div className="my-6 pb-12 md:pt-16 md:pb-24">
-        <h1 className="my-10 text-center font-bold text-4xl">
-          About Me
-          <hr className={`w-6 h-1 mx-auto my-4 border-0 rounded bg-purple-800 dark:bg-amber-400`} />
-        </h1>
+    <section id="about">
+      <div className="py-16">
+        <div className="section-header-center">
+          <h2 className="font-bold text-4xl">About Me</h2>
+          <span className="title-accent-center" />
+        </div>
 
-        <div className="flex flex-col space-y-10 items-stretch justify-center align-top md:space-x-10 md:space-y-0 md:p-4 md:flex-row md:text-left">
-          <div className="md:w-1/2 ">
-            <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
-              Get to know me!
-            </h1>
-            <p>
+        <div className="flex flex-col md:flex-row md:gap-16">
+          <div className="md:w-1/2">
+            <h3 className="text-2xl font-bold mb-5">Get to know me!</h3>
+            <p className="mb-4 leading-relaxed text-stone-700 dark:text-stone-300">
               I am an{" "}
-              <span className="font-bold">{"intuitive"}</span>,
-              <span className="font-bold">{" self-motivated"}</span>,
-              <span className="font-bold">{" critical thinker"}</span>, and
-              <span className="font-bold">{" creative"}</span> software engineer
-              based in Liverpool, whilst also open to relocation.
+              <span className="font-semibold text-purple-800 dark:text-amber-400">intuitive</span>,{" "}
+              <span className="font-semibold text-purple-800 dark:text-amber-400">self-motivated</span>,{" "}
+              <span className="font-semibold text-purple-800 dark:text-amber-400">critical thinker</span>, and{" "}
+              <span className="font-semibold text-purple-800 dark:text-amber-400">creative</span>{" "}
+              software engineer based in Liverpool, open to relocation.
             </p>
-            
-            <br />
-            <p>
-              I have a wide range of hobbies including the gym, playing sports, skydiving, and socialising with friends.
-              I am always seeking new experiences to challenge and improve my skills and expand my knowledge.
+            <p className="leading-relaxed text-stone-700 dark:text-stone-300">
+              I have a wide range of hobbies including the gym, playing sports, skydiving,
+              and socialising with friends. I am always seeking new experiences to challenge
+              and improve my skills and expand my knowledge.
             </p>
-            <br />
           </div>
-          <div className="text-center md:w-1/2 md:text-left">
-            <h1 className="text-2xl font-bold mb-6">My Skills</h1>
-            <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start">
-              {skills.map((skill, idx) => {
-                return (
-                  <TagNoLink key={idx} tag={skill} />
-                )
-              })}
+
+          <div className="mt-10 md:mt-0 md:w-1/2">
+            <h3 className="text-2xl font-bold mb-5">My Skills</h3>
+            <div className="flex flex-wrap gap-2">
+              {skills.map((skill, idx) => (
+                <TagNoLink key={idx} tag={skill} />
+              ))}
             </div>
           </div>
         </div>

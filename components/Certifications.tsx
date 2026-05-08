@@ -1,7 +1,6 @@
 'use client'
 import React from "react"
 import Image from "next/image"
-import { Tooltip } from "@chakra-ui/react"
 
 const certifications = [
   {
@@ -22,37 +21,30 @@ const certifications = [
 ]
 
 const Certifications = () => {
-
   return (
-            <div className = "mt-12">
-                <h1 className="text-center text-2xl font-bold mb-6 lg:text-left">
-                    Certifications
-                </h1>
-            <div className="flex flex-row  overflow-x-scroll sm:overflow-hidden">
-              {certifications.map((certification, idx) => {
-                return (
-                <a
-                className="hover:scale-110 ease-in duration-75 sm:border-stone-100 sm:dark:border-stone-900 rounded-lg p-2 m-2 sm:border-2 sm:hover:border-black sm:dark:hover:border-white flex items-center justify-center overflow-hidden flex-shrink-0"
-                href={certification.link} key={idx}>
-                  <Tooltip.Root>
-                    <Tooltip.Trigger asChild>
-                      <Image
-                        src={certification.image}
-                        alt=""
-                        width={125}
-                        height={75}
-                        className="object-contain"
-                      />
-                    </Tooltip.Trigger>
-                    <Tooltip.Content className='dark:bg-amber-400 dark:text-black text-white font-semibold bg-purple-800 p-2 rounded-md'>
-                      {certification.name}
-                    </Tooltip.Content>
-                  </Tooltip.Root>
-                </a>
-              )
-              })}
-            </div>
-            </div>
+    <div className="mt-12">
+      <div className="subsection-header-center subsection-header-responsive">
+        <h3 className="text-2xl font-bold">Certifications</h3>
+      </div>
+      <div className="flex flex-row overflow-x-scroll sm:overflow-hidden">
+        {certifications.map((certification, idx) => (
+          <a
+            key={idx}
+            href={certification.link}
+            className="marquee-item hover:scale-110 ease-in duration-75 sm:border-stone-100 sm:dark:border-stone-900 rounded-lg p-2 m-2 sm:border-2 sm:hover:border-black sm:dark:hover:border-white flex items-center justify-center overflow-hidden flex-shrink-0"
+          >
+            <span className="marquee-item-tooltip">{certification.name}</span>
+            <Image
+              src={certification.image}
+              alt={certification.name}
+              width={125}
+              height={75}
+              className="object-contain"
+            />
+          </a>
+        ))}
+      </div>
+    </div>
   )
 }
 

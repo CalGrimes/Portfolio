@@ -1,33 +1,274 @@
 @import "tailwindcss";
-@config "../tailwind.config.js";
 
-@media (min-width: 768px) {
-  .experience {
-    width: 500px;
-    height: 300px;
+/* ─── Tailwind v4 theme (replaces tailwind.config.js) ─── */
+@theme {
+  /* Custom breakpoints */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1440px;
+
+  /* Custom color */
+  --color-itvgreen: #0F2323;
+
+  /* Custom animations */
+  --animate-fadeIn: fadeIn 1.5s;
+  --animate-bounce: bounce 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
+  --animate-shake: shake 0.6s cubic-bezier(.36, .07, .19, .97) both;
+  --animate-slideUp: slideUp 0.5s;
+  --animate-slideUpEaseInOut: slideUp 0.5s ease-in-out;
+  --animate-slideUpCubiBezier: slideUp 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ─── Plugins ─── */
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+/* ─── Dark mode via next-themes class strategy ─── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ─── Animation keyframes ─── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
-@media (max-width: 767px) {
-    .experience {
-        width: 100%;
-        height: 100%;
-    }
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.experience {
-    text-align: justify;
+@keyframes bounce {
+  from {
+    transform: translateY(10px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
 
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    background-color: red;
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: darkred;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: red;
+  }
+}
+
+/* ─── Animation delay utilities ─── */
+@utility animation-delay-2 {
+  animation-delay: 0.2s;
+}
+
+@utility animation-delay-4 {
+  animation-delay: 0.4s;
+}
+
+@utility animation-delay-6 {
+  animation-delay: 0.6s;
+}
+
+/* ─── Layout containers (plain CSS — immune to Tailwind layer issues) ─── */
+.navbar-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 4rem;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#resume {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+#contact {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+#about {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+/* ─── Section title accent bars ─── */
+.title-accent {
+  display: block;
+  width: 3rem;
+  height: 3px;
+  border-radius: 9999px;
+  margin-top: 0.75rem;
+  background-color: #6b21a8;
+}
+
+.dark .title-accent {
+  background-color: #fbbf24;
+}
+
+.title-accent-center {
+  display: block;
+  width: 1.5rem;
+  height: 3px;
+  border-radius: 9999px;
+  margin: 0.75rem auto 0;
+  background-color: #6b21a8;
+}
+
+.dark .title-accent-center {
+  background-color: #fbbf24;
+}
+
+/* ─── Explore button ─── */
+.btn-explore {
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  background-color: #6b21a8;
+  color: white;
+  transition: transform 75ms ease-in;
+  margin-left: 0.2rem;
+}
+
+.btn-explore:hover {
+  transform: scale(1.05);
+}
+
+.dark .btn-explore {
+  background-color: #fbbf24;
+  color: black;
+}
+
+/* ─── Contact buttons ─── */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .contact-buttons {
+    flex-direction: row;
+  }
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 15rem;
+  height: 6rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: #e7e5e4;
+  transition: transform 75ms ease-in;
+  cursor: pointer;
+  border: none;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+}
+
+.dark .contact-btn {
+  background-color: #292524;
+}
+
+/* ─── Headshot 3D tilt ─── */
 .headshot {
-    transition: transform 0.3s ease;
-    transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .headshot-tilt {
-    --tiltX: 0;
-    --tiltY: 0;
-    transform: rotateX(var(--tiltX)) rotateY(var(--tiltY));
+  --tiltX: 0;
+  --tiltY: 0;
+  transform: rotateX(var(--tiltX)) rotateY(var(--tiltY));
 }
 
 .zoom {
@@ -35,7 +276,7 @@
   margin: 0 auto;
 }
 
-
+/* ─── Skills marquee ─── */
 .marquee {
   overflow: hidden !important;
   mask: linear-gradient(to right, transparent, black 10px, black 90%, transparent);
@@ -48,19 +289,44 @@
   animation: marquee 10s linear infinite;
 }
 
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.marquee-content > div > img {
+.marquee-content>div>img {
   width: 100px;
   height: 100px;
   margin: 0 10px;
 }
 
+.marquee-item {
+  position: relative;
+}
 
+.marquee-item-tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #6b21a8;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 50;
+}
+
+.dark .marquee-item-tooltip {
+  background-color: #fbbf24;
+  color: black;
+}
+
+.marquee-item:hover .marquee-item-tooltip {
+  opacity: 1;
+}
+
+/* ─── Blog ─── */
 code {
   @apply w-full;
 }
@@ -69,21 +335,7 @@ code {
   @apply text-black bg-stone-800/70;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    background-color: red;
-  }
-  50% {
-    transform: scale(1.2);
-    background-color: darkred;
-  }
-  100% {
-    transform: scale(1);
-    background-color: red;
-  }
-}
-
+/* ─── Live indicator ─── */
 .pulse-dot {
   display: inline-block;
   width: 10px;
@@ -91,4 +343,140 @@ code {
   border-radius: 50%;
   background-color: red;
   animation: pulse 1s infinite;
+}
+
+/* ─── Tabs ─── */
+.tabs-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.tabs-container {
+  display: inline-flex;
+  background-color: #f5f5f4;
+  border-radius: 1rem;
+  border: 1px solid #e7e5e4;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 3.5rem;
+}
+
+.dark .tabs-container {
+  background-color: rgba(28, 25, 23, 0.5);
+  border-color: #292524;
+}
+
+.tab-button {
+  white-space: nowrap;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #78716c;
+}
+
+.tab-button:hover {
+  color: #44403c;
+  background-color: rgba(231, 229, 228, 0.5);
+}
+
+.dark .tab-button {
+  color: #a8a29e;
+}
+
+.dark .tab-button:hover {
+  color: #e7e5e4;
+  background-color: rgba(41, 37, 36, 0.5);
+}
+
+.tab-button-active {
+  background-color: white !important;
+  color: #6b21a8 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  outline: 1px solid #e7e5e4;
+}
+
+.dark .tab-button-active {
+  background-color: #292524 !important;
+  color: #fbbf24 !important;
+  outline: 1px solid #44403c;
+}
+
+@media (max-width: 480px) {
+  .tab-button {
+    padding: 0.625rem 1rem;
+    font-size: 1.125rem;
+    flex: 1;
+  }
+
+  .tabs-container {
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ─── Titles ─── */
+.section-header {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.section-header-center {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.subsection-header {
+  margin-bottom: 2.5rem;
+}
+
+.subsection-header-center {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+@media (min-width: 976px) {
+  .subsection-header-responsive {
+    text-align: left !important;
+  }
+}
+
+/* ─── Responsive Utilities (Non-Tailwind) ─── */
+.sm-hidden {
+  display: flex;
+}
+
+@media (min-width: 480px) {
+  .sm-hidden {
+    display: none;
+  }
+}
+
+.sm-flex {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .sm-flex {
+    display: flex;
+  }
+}
+
+.main-container {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 480px) {
+  .main-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }

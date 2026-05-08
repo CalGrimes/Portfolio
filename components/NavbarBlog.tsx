@@ -1,89 +1,64 @@
-"use client" // this is a client component
-import React from "react"
-import { useState, } from "react";
-import  Link from "next/link"
-import { usePathname } from "next/navigation"
+"use client"
+import React, { useState, useEffect } from "react"
+import Link from "next/link"
 import { useTheme } from "next-themes"
 import { RiMoonFill, RiSunLine } from "react-icons/ri"
-import { IoMdMenu, IoMdClose } from "react-icons/io"
-import Image from 'next/image'
+import Image from "next/image"
 
+const NavbarBlog: React.FC = () => {
+  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
-const Navbar: React.FC = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState(theme === "system" ? systemTheme : theme);
-  const pathname = usePathname()
-  const [navbar, setNavbar] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
+
+  const toggleTheme = () => setTheme(resolvedTheme === "dark" ? "light" : "dark")
 
   return (
-    <header className="relative w-full mx-auto rounded-md px-4 sm:px-20 top-0 z-50 shadow bg-stone-200 dark:bg-stone-800 dark:border-stone-600">
-      <div className="justify-between md:items-center md:flex">
-        <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link href="/">
-              <div className="container flex items-center space-x-2 cursor-pointer hover:contrast-200">
-              <Image
-                  className="h-max w-max hidden dark:block"
-                  src="/logo-dark.png"
-                  height={120}
-                  width={120}
-                  alt="logo"
-                />
-                <Image
-                  className="h-max w-max dark:hidden block"
-                  src="/logo-light.png"
-                  height={120}
-                  width={120}
-                  alt="logo"
-                />
-              </div>
-            </Link>
-            <div className="md:hidden">
-              <button
-                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                onClick={() => setNavbar(!navbar)}
-              >
-                {navbar ? <IoMdClose size={30}/> : <IoMdMenu size={30} />}
-              </button>
-            </div>
-          </div>
-        </div>
+    <header className="w-full top-0 z-50 shadow-sm bg-stone-200 dark:bg-stone-800">
+      <div className="navbar-inner">
 
-        <div>
-          <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              navbar ? "block" : "hidden"
-            }`}
+        {/* Logo — left */}
+        <Link href="/" className="flex-shrink-0 inline-flex">
+          {mounted ? (
+            <Image
+              src={resolvedTheme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
+              width={110}
+              height={35}
+              alt="Cal Grimes"
+              className="h-9 w-auto hover:opacity-80 transition-opacity"
+            />
+          ) : (
+            <div className="h-9 w-28" />
+          )}
+        </Link>
+
+        {/* Nav — center */}
+        <nav className="flex items-center gap-6">
+          <Link
+            href="/"
+            className="text-stone-700 dark:text-stone-200 hover:text-purple-800 dark:hover:text-amber-400 font-medium transition-colors text-sm"
           >
-            <div className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+            Home
+          </Link>
+        </nav>
 
-                  <Link
-                    href="/"
-                    className={
-                      "block lg:inline-block text-neutral-900  hover:contrast-50 cursor-pointer dark:text-neutral-100"
-                    }
-                    onClick={() => setNavbar(!navbar)}
-                  >
-                    Home
-                  </Link>
-                <button
-                  onClick={() => setTheme("light")}
-                  className="bg-gray-100 p-2 rounded-xl hidden dark:block"
-                >
-                  <RiSunLine size={25} color="black"/>
-                </button>
-                <button
-                  onClick={() => setTheme("dark")}
-                  className="bg-gray-100 p-2 rounded-xl block dark:hidden"
-                >
-                  <RiMoonFill size={25} />
-                </button>
-            </div>
-          </div>
+        {/* Theme toggle — right */}
+        <div className="navbar-right">
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="bg-stone-100 dark:bg-stone-700 p-2 rounded-lg hover:opacity-80 transition-opacity"
+            >
+              {resolvedTheme === "dark"
+                ? <RiSunLine size={20} color="black" />
+                : <RiMoonFill size={20} />}
+            </button>
+          )}
         </div>
       </div>
     </header>
   )
 }
 
-export default Navbar;
+export default NavbarBlog

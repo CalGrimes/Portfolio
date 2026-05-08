@@ -4,11 +4,13 @@ import Contact from "@/components/Contact";
 import SectionHeader from "@/components/SectionHeader";
 export default function Home() {
   return (
-    <main className="mx-auto px-4 sm:px-6">
+    <main>
       <HeroSection />
-      <SectionHeader />
-      <AboutSection />
-      <Contact />
+      <div className="main-container">
+        <SectionHeader />
+        <AboutSection />
+        <Contact />
+      </div>
     </main>
   )
 }

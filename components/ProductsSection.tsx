@@ -49,9 +49,11 @@ const Products = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-5xl">
           <div className="mt-10 space-y-20">
-            <h1 className="text-left font-bold text-4xl">
-              Company involvements...
-            </h1>
+            <div className="section-header">
+              <h1 className="text-left font-bold text-4xl">
+                Company involvements...
+              </h1>
+            </div>
             {posts.map((post) => (
               <article key={post.id} className="relative isolate flex flex-col gap-8 shadow-xl dark:bg-stone-800/70 rounded-xl">
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 group-hover:scale-105 transition-transform duration-500" />

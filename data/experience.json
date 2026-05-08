@@ -1,5 +1,13 @@
 [
   {
+    "name": "Barclays",
+    "title": "Solution Architect (Risk Finance & Treasury)",
+    "image": "/barclays.png",
+    "description": [],
+    "tech": ["Solution Architecture", "Enterprise Architecture", "Cloud Adoption", "C4 Diagrams", "Governance", "SaaS Vendor Onboarding", "GenAI", "Containerisation", "Roadmap Planning", "Stakeholder Management", "RFI Evaluation", "Risk & Finance"],
+    "link": "https://www.barclays.co.uk/"
+  },
+  {
     "name": "ITV",
     "title": "Technical Integration Analyst",
     "image": "/ITV.svg",

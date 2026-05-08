@@ -7,45 +7,37 @@ import TagNoLink from "@/components/TagNoLink";
 
 const EducationSection = () => {
   return (
-    <section id="education" className="max-w-3xl md:max-w-5xl mx-auto">
-        <div className=" justify-around">
-            <h1 className="my-10 text-left font-bold text-4xl">
-                Education
-                <hr className="border-2 border-purple-800 dark:border-amber-400 mt-4 w-10 rounded-full" />
-            </h1>
-
-      <div className="flex flex-col space-y-12">
-        {education.map((education, idx) => {
-          return (
-            <div key={idx}>
-              <SlideUp offset="-300px 0px -300px 0px">
-                <div className="flex flex-col animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
-                  <div className="md:my-auto md:pb-10">
-                      <Image
-                        src={education.image}
-                        alt=""
-                        width={500}
-                        height={500}
-                        className="rounded-xl shadow-xl dark:shadow-none hover:scale-105 ease-in duration-75 education"
-                      />
-                  </div>
-                  <div className="mt-8 md:w-1/2">
-                    <h1 className="text-4xl font-bold mb-6">{education.title}</h1>
-                    <h2 className="text-2xl font-semibold mb-6">Grade: {education.grade}</h2>
-                    <div className="flex flex-auto align-bottom flex-wrap mt-4">
-                        {education.tech.map((tech,idx2) => (
-                                <TagNoLink key={idx2} tag={tech} />
-                        ))}
-                    </div>
-                  </div>
-                </div>
-              </SlideUp>
-            </div>
-          )
-        })}
-        
+    <section id="education" className="mt-16">
+      <div className="section-header">
+        <h2 className="font-bold text-4xl">Education</h2>
+        <span className="title-accent" />
       </div>
-        </div>
+
+      <div className="flex flex-col gap-12">
+        {education.map((edu, idx) => (
+          <SlideUp key={idx} offset="-300px 0px -300px 0px">
+            <div className="flex flex-col md:flex-row md:items-center md:gap-12">
+              <div className="flex-shrink-0 md:w-72 relative" style={{ height: '160px' }}>
+                <Image
+                  src={edu.image}
+                  alt={edu.title}
+                  fill
+                  className="rounded-xl shadow-xl dark:shadow-none hover:scale-105 ease-in duration-75 object-contain"
+                />
+              </div>
+              <div className="mt-6 md:mt-0 flex-1">
+                <h3 className="text-3xl font-bold mb-3">{edu.title}</h3>
+                <p className="text-xl font-semibold mb-4 text-stone-600 dark:text-stone-400">Grade: {edu.grade}</p>
+                <div className="flex flex-wrap gap-2">
+                  {edu.tech.map((tech, idx2) => (
+                    <TagNoLink key={idx2} tag={tech} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </SlideUp>
+        ))}
+      </div>
     </section>
   )
 }

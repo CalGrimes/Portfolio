@@ -8,7 +8,7 @@ const Resume = () => {
 
     return (
 
-    <section id="resume" className="max-w-3xl md:max-w-5xl mx-auto">
+    <section id="resume">
 
         <ExperienceSection />
         <EducationSection />

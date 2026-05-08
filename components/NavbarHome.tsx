@@ -1,13 +1,11 @@
-"use client" // this is a client component
-import React from "react"
-import { useState } from "react";
+"use client"
+import React, { useState, useEffect } from "react"
 import { Link as ScrollLink } from "react-scroll/modules"
-import  Link from "next/link"
-import { usePathname } from "next/navigation"
+import Link from "next/link"
 import { useTheme } from "next-themes"
 import { RiMoonFill, RiSunLine } from "react-icons/ri"
 import { IoMdMenu, IoMdClose } from "react-icons/io"
-import Image from 'next/image'
+import Image from "next/image"
 
 interface NavItem {
   label: string
@@ -15,124 +13,114 @@ interface NavItem {
 }
 
 const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "Home",
-    page: "home",
-  },
-  {
-    label: "Resume",
-    page: "section-headers",
-  },
-  {
-    label: "About",
-    page: "about",
-  },
-  {
-    label: "Contact",
-    page: "contact",
-  },
+  { label: "Home",    page: "home" },
+  { label: "Resume",  page: "section-headers" },
+  { label: "About",   page: "about" },
+  { label: "Contact", page: "contact" },
 ]
+
 const Navbar: React.FC = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState(theme === "system" ? systemTheme : theme);
-  const pathname = usePathname()
-  const [navbar, setNavbar] = useState(false)
+  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => { setMounted(true) }, [])
+
+  const toggleTheme = () => setTheme(resolvedTheme === "dark" ? "light" : "dark")
 
   return (
-    <header className="w-full mx-auto rounded-md  px-4 sm:px-20 fixed top-0 z-50 shadow bg-stone-200 dark:bg-stone-800 dark:border-stone-600">
-      <div className="justify-between md:items-center md:flex">
-        <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <ScrollLink to="home">
-              <div className="container flex items-center space-x-2 cursor-pointer hover:contrast-200">
-              <Image
-                  className="h-max w-max hidden dark:block"
-                  src="/logo-dark.png"
-                  height={120}
-                  width={120}
-                  alt="logo"
-                />
-                <Image
-                  className="h-max w-max dark:hidden block"
-                  src="/logo-light.png"
-                  height={120}
-                  width={120}
-                  alt="logo"
-                />
-              </div>
-            </ScrollLink>
-            <div className="md:hidden">
-              <button
-                    onClick={() => setTheme("light")}
-                    className="bg-white p-2 rounded-xl hidden dark:inline-flex mr-4 items-center"
-                  >
-                    <RiSunLine size={25} color="black"/>
-              </button>
-              <button
-                  onClick={() => setTheme("dark")}
-                  className="bg-white p-2 rounded-xl inline-flex dark:hidden mr-4 items-center"
-                >
-                  <RiMoonFill size={25} />
-              </button>
-              <button
-                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                onClick={() => setNavbar(!navbar)}
-              >
-                {navbar ? <IoMdClose size={30}/> : <IoMdMenu size={30} />}
-              </button>
-            </div>
-          </div>
-        </div>
+    <header className="w-full fixed top-0 z-50 shadow-sm bg-stone-200 dark:bg-stone-800">
+      <div className="navbar-inner">
 
-        <div>
-          <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              navbar ? "block" : "hidden"
-            }`}
+        {/* Logo — left */}
+        <ScrollLink to="home" smooth duration={500} className="cursor-pointer flex-shrink-0 inline-flex">
+          {mounted ? (
+            <Image
+              src={resolvedTheme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
+              width={110}
+              height={35}
+              alt="Cal Grimes"
+              className="h-9 w-auto hover:opacity-80 transition-opacity"
+            />
+          ) : (
+            <div className="h-9 w-28" />
+          )}
+        </ScrollLink>
+
+        {/* Nav items — center */}
+        <nav className="hidden md:flex items-center gap-7">
+          {NAV_ITEMS.map((item, idx) => (
+            <ScrollLink
+              key={idx}
+              to={item.page}
+              smooth
+              spy
+              offset={-100}
+              duration={500}
+              className="text-stone-700 dark:text-stone-200 hover:text-purple-800 dark:hover:text-amber-400 font-medium cursor-pointer transition-colors text-sm"
+            >
+              {item.label}
+            </ScrollLink>
+          ))}
+          <Link
+            href="/blog"
+            className="text-stone-700 dark:text-stone-200 hover:text-purple-800 dark:hover:text-amber-400 font-medium transition-colors text-sm"
           >
-            <div className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              {NAV_ITEMS.map((item, idx) => {
-                return (
-                  <ScrollLink
-                    key={idx}
-                    to={item.page}
-                    className={
-                      "block lg:inline-block text-neutral-900  hover:contrast-50 cursor-pointer dark:text-neutral-100"
-                    }
-                    style={{ transitionDelay: `${idx * 0.1}s` }} // Transitions the navbar items
-                    activeClass="active"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
-                    onClick={() => setNavbar(!navbar)}
-                  >
-                    {item.label}
-                  </ScrollLink>
-                  
-                )
-              })}
-              <Link className="block lg:inline-block text-neutral-900  hover:contrast-50 cursor-pointer dark:text-neutral-100" href="/blog">Blog</Link>
-              <div className="flex hidden md:block">
-                <button
-                  onClick={() => setTheme("light")}
-                  className="bg-white p-2 rounded-xl hidden dark:block"
-                >
-                  <RiSunLine size={25} color="black"/>
-                </button>
-                <button
-                  onClick={() => setTheme("dark")}
-                  className="bg-white p-2 rounded-xl block dark:hidden"
-                >
-                  <RiMoonFill size={25} />
-                </button>
-                </div>
-            </div>
-          </div>
+            Blog
+          </Link>
+        </nav>
+
+        {/* Theme toggle + mobile hamburger — right */}
+        <div className="navbar-right gap-2">
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="bg-stone-100 dark:bg-stone-700 p-2 rounded-lg hover:opacity-80 transition-opacity"
+            >
+              {resolvedTheme === "dark"
+                ? <RiSunLine size={20} color="black" />
+                : <RiMoonFill size={20} />}
+            </button>
+          )}
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            className="p-2 text-stone-700 dark:text-stone-200 rounded-lg md:hidden"
+          >
+            {open ? <IoMdClose size={26} /> : <IoMdMenu size={26} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden bg-stone-200 dark:bg-stone-800 border-t border-stone-300 dark:border-stone-700 px-6 py-4 flex flex-col gap-4">
+          {NAV_ITEMS.map((item, idx) => (
+            <ScrollLink
+              key={idx}
+              to={item.page}
+              smooth
+              spy
+              offset={-100}
+              duration={500}
+              className="text-stone-700 dark:text-stone-200 hover:text-purple-800 dark:hover:text-amber-400 font-medium cursor-pointer transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              {item.label}
+            </ScrollLink>
+          ))}
+          <Link
+            href="/blog"
+            className="text-stone-700 dark:text-stone-200 hover:text-purple-800 dark:hover:text-amber-400 font-medium transition-colors"
+            onClick={() => setOpen(false)}
+          >
+            Blog
+          </Link>
+        </div>
+      )}
     </header>
   )
 }
 
-export default Navbar;
+export default Navbar
