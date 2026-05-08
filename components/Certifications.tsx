@@ -32,17 +32,22 @@ const Certifications = () => {
               {certifications.map((certification, idx) => {
                 return (
                 <a
-                className="hover:scale-110 ease-in duration-75 sm:border-stone-100 sm:dark:border-stone-900 rounded-lg p-2 m-2 sm:border-2 sm:hover:border-black sm:dark:hover:border-white flex items-center justify-center overflow-hidden flex-shrink-0" 
+                className="hover:scale-110 ease-in duration-75 sm:border-stone-100 sm:dark:border-stone-900 rounded-lg p-2 m-2 sm:border-2 sm:hover:border-black sm:dark:hover:border-white flex items-center justify-center overflow-hidden flex-shrink-0"
                 href={certification.link} key={idx}>
-                  <Tooltip label={certification.name} placement="top" aria-label='tooltip' className='dark:bg-amber-400 dark:text-black text-white font-semibold bg-purple-800 p-2 rounded-md'>
-                  <Image
-                    src={certification.image}
-                    alt=""
-                    width={125}
-                    height={75}    
-                    className="object-contain"  
-                  />
-                  </Tooltip>
+                  <Tooltip.Root>
+                    <Tooltip.Trigger asChild>
+                      <Image
+                        src={certification.image}
+                        alt=""
+                        width={125}
+                        height={75}
+                        className="object-contain"
+                      />
+                    </Tooltip.Trigger>
+                    <Tooltip.Content className='dark:bg-amber-400 dark:text-black text-white font-semibold bg-purple-800 p-2 rounded-md'>
+                      {certification.name}
+                    </Tooltip.Content>
+                  </Tooltip.Root>
                 </a>
               )
               })}

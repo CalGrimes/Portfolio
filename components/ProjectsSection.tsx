@@ -10,22 +10,32 @@ import TagNoLink from "@/components/TagNoLink";
 const ProjectLinks = ({project}: any) => {
   return (
     <div className="flex flex-row align-bottom space-x-4">
-      <Tooltip label="Source Code" aria-label='Source Code Tooltip' placement="top" className="p-1 rounded bg-gray-200 dark:bg-zinc-800">
-      <Link href={project.github} target="_blank">
-        <BsGithub
-          size={30}
-          className="hover:-translate-y-1 transition-transform cursor-pointer"
-        />
-      </Link>
-      </Tooltip>
-      <Tooltip label={project.linkTooltip} aria-label='Demo Tooltip' placement="top" className="p-1 rounded bg-gray-200 dark:bg-zinc-800">
-      <Link href={project.link} target="_blank">
-        <BsArrowUpRightSquare
-          size={30}
-          className="hover:-translate-y-1 transition-transform cursor-pointer"
-        />
-      </Link>
-      </Tooltip>
+      <Tooltip.Root>
+        <Tooltip.Trigger asChild>
+          <Link href={project.github} target="_blank">
+            <BsGithub
+              size={30}
+              className="hover:-translate-y-1 transition-transform cursor-pointer"
+            />
+          </Link>
+        </Tooltip.Trigger>
+        <Tooltip.Content className="p-1 rounded bg-gray-200 dark:bg-zinc-800">
+          Source Code
+        </Tooltip.Content>
+      </Tooltip.Root>
+      <Tooltip.Root>
+        <Tooltip.Trigger asChild>
+          <Link href={project.link} target="_blank">
+            <BsArrowUpRightSquare
+              size={30}
+              className="hover:-translate-y-1 transition-transform cursor-pointer"
+            />
+          </Link>
+        </Tooltip.Trigger>
+        <Tooltip.Content className="p-1 rounded bg-gray-200 dark:bg-zinc-800">
+          {project.linkTooltip}
+        </Tooltip.Content>
+      </Tooltip.Root>
     </div>
   )
 }

@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
 @media (min-width: 768px) {
   .experience {
@@ -66,9 +65,8 @@ code {
   @apply w-full;
 }
 
-.dark-blog {
-  @apply dark:text-black;
-  @apply dark:bg-stone-800/70;
+.dark .dark-blog {
+  @apply text-black bg-stone-800/70;
 }
 
 @keyframes pulse {

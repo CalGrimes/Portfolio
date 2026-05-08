@@ -1,5 +1,3 @@
-const { nextui } = require("@nextui-org/react");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
@@ -17,7 +15,7 @@ module.exports = {
       colors: {
         itvgreen: "#0F2323",
       },
-      screens: { sm: "480px", md: "768px", lg: "976px", xl: "1440pd" },
+      screens: { sm: "480px", md: "768px", lg: "976px", xl: "1440px" },
       animation: {
         fadeIn: "fadeIn 1.5s",
         bounce:
@@ -56,7 +54,6 @@ module.exports = {
     },
   },
   plugins: [
-    nextui(),
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms')]
 }

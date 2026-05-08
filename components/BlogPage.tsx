@@ -159,9 +159,9 @@ function LoadingPage() {
         <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 5 }).map((_, index) => (
               <article key={index} className="flex flex-col items-start justify-between bg-gray-200 dark:bg-stone-800/70">
-                <Skeleton height="384px" fadeDuration={4} width="100%" />
-                <Skeleton height="20px" fadeDuration={4} width="80%" />
-                <Skeleton height="20px" fadeDuration={4} width="60%" />
+                <Skeleton height="384px" width="100%" />
+                <Skeleton height="20px" width="80%" />
+                <Skeleton height="20px" width="60%" />
               </article>
             ))}
             </div>
