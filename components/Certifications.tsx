@@ -22,11 +22,11 @@ const certifications = [
 
 const Certifications = () => {
   return (
-    <div className="mt-12">
+    <div className="mt-12" style={{ marginTop: '3.5rem' }}>
       <div className="subsection-header-center subsection-header-responsive">
         <h3 className="text-2xl font-bold">Certifications</h3>
       </div>
-      <div className="flex flex-row overflow-x-scroll sm:overflow-hidden">
+      <div className="cert-container">
         {certifications.map((certification, idx) => (
           <a
             key={idx}

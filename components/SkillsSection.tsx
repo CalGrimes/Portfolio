@@ -16,7 +16,7 @@ const SkillsSection = () => {
   const allSkills = [...skills, ...skills];
 
   return (
-    <section id="skills" className='md:max-w-4xl mt-12 w-screen'>
+    <section id="skills" className='md:max-w-4xl mt-12 w-screen' style={{ marginTop: '2rem' }}>
       <div className="subsection-header-center subsection-header-responsive">
         <h1 className="text-2xl font-bold">Technologies</h1>
       </div>

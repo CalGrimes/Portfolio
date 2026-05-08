@@ -431,11 +431,11 @@ code {
 }
 
 .subsection-header {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .subsection-header-center {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
   text-align: center;
 }
 
@@ -478,5 +478,18 @@ code {
   .main-container {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+}
+
+.cert-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 976px) {
+  .cert-container {
+    justify-content: flex-start;
   }
 }
